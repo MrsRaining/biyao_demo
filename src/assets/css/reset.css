@@ -5,7 +5,8 @@
 }
 html{
     font-size: 100px;
-    /* overflow: hidden; */
+    overflow-x: hidden;
+    overflow-y: auto; 
 }
 ul{
     list-style: none;
@@ -15,5 +16,6 @@ a{
 }
 body{
     font-size: 0.14rem;
-    /* overflow: hidden; */
+    overflow:-Scroll;
+    overflow-x:hidden
 }

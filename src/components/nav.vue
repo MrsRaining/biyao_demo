@@ -23,7 +23,6 @@
                 <a href="##">汽配</a>
             </div>
         </div>
-        <div class="main"></div>
    </div>
 </template>
     
@@ -41,17 +40,16 @@
 <style lang="css" scoped>
     .nav-outer{
         width: 100%;
-        height: 0.46rem;
+        height: 0.62rem;
+        overflow-x: auto;
+        overflow-y: hidden;
         position: relative;
+        z-index: -10;
     }
     .nav-inner{
-        overflow-x: scroll;
-		overflow-y: hidden;
-        position: absolute;
         width: 10.3rem;
         height: 0.46rem;
         padding: 0 0.15rem;
-        background-color: pink
     }
     .nav-inner>a{
         float: left;
@@ -61,10 +59,5 @@
         text-align: center;
         color: #808080;
         font-size: 0.14rem;
-    }
-    .main{
-        width: 100%;
-        height: 1000px;
-        background-color: orange;
     }
 </style>

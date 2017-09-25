@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import headerS from './components/headerT'
+    import headerS from './components/nav'
     export default {
         components: {
           headerS

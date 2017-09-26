@@ -5,10 +5,13 @@ import App from './App'
 import router from './router'
 import './assets/css/reset.css'
 import headerS from './components/headerS'
+import headerT from './components/headerT'
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+Vue.component('header-s', headerS);
+Vue.component('header-t', headerT);
 new Vue({
   el: '#app',
   router,

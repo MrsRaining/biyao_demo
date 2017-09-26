@@ -1,14 +1,13 @@
 <template>
     <div id="app">
-        <headerS></headerS>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-    import headerS from './components/nav'
     export default {
         components: {
-          headerS
+            
         }
     }
 </script>

@@ -4,35 +4,35 @@
            <div class="head-top">
               <span class="head-top-l"></span>
               <span class="head-top-m">购物车</span>
-              <span class="head-top-r">
+              <span class="head-top-r" @click="headShowFn">
                   <img src="https://static.biyao.com/m/img/icon/list.png?v=biyao_a2ed1bc">
               </span>
            </div>
-           <div class="head-bottom">
-               <a href="##">
+           <div class="head-bottom" v-show="headShow">
+               <router-link to="/home">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b4.png?v=biyao_d8f4e4c">
                    </p>
                    <p>首页</p>
-               </a>
-               <a href="##">
+               </router-link>
+               <router-link to="/classify">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b12.png?v=biyao_ec8fbca">
                    </p>
                    <p>分类</p>
-               </a>
-               <a href="##">
+               </router-link>
+               <router-link to="/cart">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b5.png?v=biyao_000cf98">
                    </p>
                    <p>购物车</p>
-               </a>
-               <a href="##">
+               </router-link>
+               <router-link to="/mine">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b6.png?v=biyao_4b664ee">
                    </p>
                    <p>我的必要</p>
-               </a>
+               </router-link>
            </div>
        </header>
    </div>
@@ -43,8 +43,13 @@
         name: "headerS",
         data () {
             return {
-                 
+                 headShow: false
             };
+        },
+        methods: {
+            headShowFn() {
+                this.headShow = !this.headShow;
+            }
         }
     }
 </script>
@@ -52,14 +57,13 @@
 <style lang="css" scoped>
     header{
         width: 100%;
-        height: 0.4rem;
-        border-bottom: 1px solid #e5e5e5;
         box-shadow: 0px 0px 1px #d9d8d8;
     }
     .head-top{
         height: 0.2rem;
         padding: 0.1rem 0.15rem 0.1rem 0.15rem;
         overflow: hidden;
+        border-bottom: 1px solid #e5e5e5;
     }
     .head-top-l{
         float: left;

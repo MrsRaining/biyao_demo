@@ -2,25 +2,25 @@
     <div>
         <div class="nav-outer">
             <div class="nav-inner">
-                <a href="##">推荐</a>
-                <a href="##">男装</a>
-                <a href="##">女装</a>
-                <a href="##">眼镜</a>
-                <a href="##">配饰</a>
-                <a href="##">婴童</a>
-                <a href="##">鞋靴</a>
-                <a href="##">运动</a>
-                <a href="##">皮具</a>
-                <a href="##">出行</a>
-                <a href="##">个护</a>
-                <a href="##">美妆</a>
-                <a href="##">居家</a>
-                <a href="##">厨具</a>
-                <a href="##">家电</a>
-                <a href="##">家装</a>
-                <a href="##">家具</a>
-                <a href="##">数码</a>
-                <a href="##">汽配</a>
+                <router-link to="/home/tuijian" class="nav-a-active">推荐</router-link>
+                <router-link to="/home/nanzhuang">男装</router-link>
+                <router-link to="/home/nvzhuang">女装</router-link>
+                <router-link to="/home/yanjing">眼镜</router-link>
+                <router-link to="/home/peishi">配饰</router-link>
+                <router-link to="/home/yingtong">婴童</router-link>
+                <router-link to="/home/xiexue">鞋靴</router-link>
+                <router-link to="/home/yundong">运动</router-link>
+                <router-link to="/home/piju">皮具</router-link>
+                <router-link to="/home/chuxing">出行</router-link>
+                <router-link to="/home/gehu">个护</router-link>
+                <router-link to="/home/meizhuang">美妆</router-link>
+                <router-link to="/home/jujia">居家</router-link>
+                <router-link to="/home/chuju">厨具</router-link>
+                <router-link to="/home/jiadian">家电</router-link>
+                <router-link to="/home/jiazhuang">家装</router-link>
+                <router-link to="/home/jiaju">家具</router-link>
+                <router-link to="/home/shuma">数码</router-link>
+                <router-link to="/home/qipei">汽配</router-link>
             </div>
         </div>
    </div>
@@ -44,7 +44,7 @@
         overflow-x: auto;
         overflow-y: hidden;
         position: relative;
-        z-index: -10;
+        z-index: 0;
     }
     .nav-inner{
         width: 10.3rem;
@@ -59,5 +59,9 @@
         text-align: center;
         color: #808080;
         font-size: 0.14rem;
+    }
+    .nav-inner .nav-a-active{
+         border-bottom: 1px solid #7f4395;
+         color: #7f4395;
     }
 </style>

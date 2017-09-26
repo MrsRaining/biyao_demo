@@ -1,6 +1,6 @@
 <template>
     <div>
-       
+       <header-s></header-s>
    </div>
 </template>
     
@@ -11,6 +11,9 @@
             return {
                  
             };
+        },
+        components: {
+
         }
     }
 </script>

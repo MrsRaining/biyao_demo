@@ -1,12 +1,12 @@
 <template>
     <div>
-       <header-t></header-t>
+        <h1>我是男装</h1>
    </div>
 </template>
     
 <script>
     export default {
-        name: "cart",
+        name: "nav_2",
         data () {
             return {
                  

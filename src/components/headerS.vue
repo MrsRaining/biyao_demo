@@ -5,33 +5,33 @@
                <div class="head-top-l">
                    <span>请输入要搜索的商品</span>
                </div>
-               <div class="head-top-r"></div>
+               <div class="head-top-r" @click="headShowFn"></div>
            </div>
-           <div class="head-bottom">
-               <a href="##">
+           <div class="head-bottom" v-show="headShow">
+               <router-link to="/home">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b4.png?v=biyao_d8f4e4c">
                    </p>
                    <p>首页</p>
-               </a>
-               <a href="##">
+               </router-link>
+               <router-link to="/classify">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b12.png?v=biyao_ec8fbca">
                    </p>
                    <p>分类</p>
-               </a>
-               <a href="##">
+               </router-link>
+               <router-link to="/cart">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b5.png?v=biyao_000cf98">
                    </p>
                    <p>购物车</p>
-               </a>
-               <a href="##">
+               </router-link>
+               <router-link to="/mine">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b6.png?v=biyao_4b664ee">
                    </p>
                    <p>我的必要</p>
-               </a>
+               </router-link>
            </div>
        </header>
    </div>
@@ -42,8 +42,13 @@
         name: "headerS",
         data () {
             return {
-                 
+                 headShow: false
             };
+        },
+        methods: {
+            headShowFn() {
+                this.headShow = !this.headShow;
+            }
         }
     }
 </script>
@@ -51,7 +56,7 @@
 <style lang="css" scoped>
     header{
         width: 100%;
-        height: 0.4rem;
+        /* height: 1.04rem; */
     }
     .head-top{
         padding: 0.06rem 0.15rem 0.06rem 0.1rem;
@@ -94,6 +99,10 @@
         display: flex;
         justify-content: space-around;
         padding-top: 0.13rem;
+        position: absolute;
+        /* top: 0.4rem; */
+        z-index: 100;
+        background-color: #fff;
     }
     .head-bottom a{
         flex-grow: 1;

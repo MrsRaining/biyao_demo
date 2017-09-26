@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>我是男装</h1>
+        <h1>{{ change }}</h1>
    </div>
 </template>
     
@@ -9,8 +9,13 @@
         name: "nav_2",
         data () {
             return {
-                 
+                data: ""
             };
+        },
+        computed: {
+            change() {
+                return this.$route.params.id
+            }
         }
     }
 </script>

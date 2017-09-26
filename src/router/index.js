@@ -18,24 +18,7 @@ export default new Router({
       children: [
         // {path: '', redirect: '/tuijian'},
         {path: 'tuijian', component: nav_1},
-        {path: 'nanzhuang', component: nav_2},
-        {path: 'nvzhuang', component: nav_2},
-        {path: 'yanjing', component: nav_2},
-        {path: 'peishi', component: nav_2},
-        {path: 'yingtong', component: nav_2},
-        {path: 'xiexue', component: nav_2},
-        {path: 'yundong', component: nav_2},
-        {path: 'piju', component: nav_2},
-        {path: 'chuxing', component: nav_2},
-        {path: 'gehu', component: nav_2},
-        {path: 'meizhuang', component: nav_2},
-        {path: 'jujia', component: nav_2},
-        {path: 'chuju', component: nav_2},
-        {path: 'jiadian', component: nav_2},
-        {path: 'jiazhuang', component: nav_2},
-        {path: 'jiaju', component: nav_2},
-        {path: 'shuma', component: nav_2},
-        {path: 'qipei', component: nav_2},
+        {path: ':id', component: nav_2}
       ]
     },
     {

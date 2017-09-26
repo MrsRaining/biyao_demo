@@ -5,7 +5,9 @@
                <div class="head-top-l">
                    <span>请输入要搜索的商品</span>
                </div>
-               <div class="head-top-r" @click="headShowFn"></div>
+               <div class="head-top-r" @click="headShowFn">
+                   <img src="https://static.biyao.com/m/img/icon/list.png?v=biyao_a2ed1bc">
+               </div>
            </div>
            <div class="head-bottom" v-show="headShow">
                <router-link to="/home">
@@ -66,7 +68,7 @@
     .head-top-l{
         float: left;
         height: 0.3rem;
-        width: 3.4rem;
+        width: 87%;
         background-color: #f2f2f2;
         line-height: 0.3rem;
         border-radius: 3px;
@@ -86,11 +88,16 @@
     }
     .head-top-r{
         float: right;
-        background: url(https://static.biyao.com/m/img/icon/list.png?v=biyao_a2ed1bc) 0.05rem 0.03rem no-repeat;
-        background-size: 80%;
-        width: 0.3rem;
-        height: 0.3rem;
+        width: 13%;
+        height: 0.27rem;
         cursor: pointer;
+        text-align: center;
+        /* text-indent: 0.25rem; */
+        padding-top: 0.03rem;
+    }
+    .head-top-r img{
+        width: 0.25rem;
+        height: 0.25rem;
     }
     .head-bottom{
         width: 100%;

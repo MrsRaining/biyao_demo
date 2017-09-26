@@ -1,35 +1,24 @@
 <template>
     <div>
-        <div class="nav-outer">
-            <div class="nav-inner">
-                <!-- 这里的：key需要注意 -->
-                <div v-for="(item, index) in navList" :key="item.link" @click="setNavActive(index)" class="nav-inner-div">
-                    <router-link :to='"/home/" + item.link' :class="{'nav-a-active': navActive==index}">{{ item.content}}</router-link>
-                </div>
-                <!-- <router-link to="/home/nanzhuang">男装</router-link>
-                <router-link to="/home/nvzhuang">女装</router-link>
-                <router-link to="/home/yanjing">眼镜</router-link>
-                <router-link to="/home/peishi">配饰</router-link>
-                <router-link to="/home/yingtong">婴童</router-link>
-                <router-link to="/home/xiexue">鞋靴</router-link>
-                <router-link to="/home/yundong">运动</router-link>
-                <router-link to="/home/piju">皮具</router-link>
-                <router-link to="/home/chuxing">出行</router-link>
-                <router-link to="/home/gehu">个护</router-link>
-                <router-link to="/home/meizhuang">美妆</router-link>
-                <router-link to="/home/jujia">居家</router-link>
-                <router-link to="/home/chuju">厨具</router-link>
-                <router-link to="/home/jiadian">家电</router-link>
-                <router-link to="/home/jiazhuang">家装</router-link>
-                <router-link to="/home/jiaju">家具</router-link>
-                <router-link to="/home/shuma">数码</router-link>
-                <router-link to="/home/qipei">汽配</router-link> -->
-            </div>
-        </div>
+           
+        <swiper :options="swiperOption" class="swiper-box">
+            <swiper-slide class="swiper-item" v-for="(item, index) in navList" :key="item.id"><router-link :to="'/home/'+item.link">{{ item.content }}</router-link></swiper-slide>
+            <!-- <swiper-slide class="swiper-item">Slide 2</swiper-slide>
+            <swiper-slide class="swiper-item">Slide 3</swiper-slide>
+            <swiper-slide class="swiper-item">Slide 4</swiper-slide>
+            <swiper-slide class="swiper-item">Slide 5</swiper-slide>
+            <swiper-slide class="swiper-item">Slide 6</swiper-slide>
+            <swiper-slide class="swiper-item">Slide 7</swiper-slide>
+            <swiper-slide class="swiper-item">Slide 8</swiper-slide>
+            <swiper-slide class="swiper-item">Slide 9</swiper-slide>
+            <swiper-slide class="swiper-item">Slide 10</swiper-slide> -->
+            <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+        </swiper>
    </div>
 </template>
     
 <script>
+    import { swiper, swiperSlide } from 'vue-awesome-swiper'
     export default {
         name: "nav",
         data () {
@@ -55,8 +44,15 @@
                      {link: 'shuma', content: '数码'},
                      {link: 'qipei', content: '汽配'},
                  ],
-                 navActive: 0
-            };
+                navActive: 0,
+                 swiperOption: {
+                    slidesPerView: 8,
+                    freeMode: true,
+                    // paginationClickable: true,
+                    // spaceBetween: 30,
+                    // mousewheelControl: true
+                }
+            }
         },
         methods: {
             setNavActive(index) {
@@ -68,7 +64,7 @@
 </script>
     
 <style lang="css" scoped>
-    .nav-outer{
+    /* .nav-outer{
         width: 100%;
         height: 0.62rem;
         overflow-x: auto;
@@ -97,5 +93,30 @@
     .nav-inner .nav-a-active{
          border-bottom: 1px solid #7f4395;
          color: #7f4395;
+    } */
+    .swiper-box{
+        width: 100%;
+        height: 0.46rem;
+        border: 1px solid #e5e5e5;
+    }
+    .swiper-item{
+        width: 0.54rem;
+        height: 0.45rem;
+        line-height: 0.45rem;
+        text-align: center;
+    }
+    .swiper-item>a{
+        color: #808080;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    /* .swiper-item .colorShow{
+        color: #7f4395;
+        border-bottom: 1px solid #7f4395;
+    } */
+    .swiper-item .router-link-active{
+        color: #7f4395;
+        border-bottom: 1px solid #7f4395;
     }
 </style>

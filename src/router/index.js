@@ -17,6 +17,7 @@ export default new Router({
       component: Home,
       children: [
         // {path: '', redirect: '/tuijian'},
+        {path: "", redirect: "tuijian"},
         {path: 'tuijian', component: nav_1},
         {path: ':id', component: nav_2}
       ]

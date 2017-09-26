@@ -1,6 +1,110 @@
 <template>
     <div>
        <header-s></header-s>
+       <div class="shoplist">
+        <div class="list-left">
+            <ul class="list-left-ul">
+                <li>男装</li>
+                <li>女装</li>
+                <li>眼镜</li>
+                <li>婴童</li>
+                <li>运动</li>
+                <li>配饰</li>
+                <li>男装</li>
+                <li>男装</li>
+                <li>男装</li>
+                <li>男装</li>
+                <li>男装</li>
+                <li>男装</li>
+                <li>男装</li>
+                <li>男装</li>
+                <li>男装</li>
+                <li>男装</li>
+            </ul>
+        </div>
+        <div class="list-right">
+            <div class="list-inner">
+                <div class="banner">
+                    <img src="https://bfs.biyao.com/group1/M00/19/72/rBACW1mJdKOAXyuHAAECE11HSkU419.jpg">
+                </div>
+                <div class="sub-catelist">
+                    <div class="listhead1">——男士外套——</div>
+                    <div class="list">
+                        <div class="list-wrap">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/18/76/rBACVFmSkKqAHYBNAAAfdj1aPOI825.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                        <div class="list-wrap">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/18/76/rBACVFmSkKqAHYBNAAAfdj1aPOI825.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                        <div class="list-wrap">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/18/76/rBACVFmSkKqAHYBNAAAfdj1aPOI825.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                    </div>
+                    <div class="listhead2">——男士上装——</div>
+                    <div class="list">
+                        <div class="list-wrap">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/1D/10/rBACYVnEdp6ASDIYAAAcoXEchKM497.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                        <div class="list-wrap">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/1D/10/rBACYVnEdp6ASDIYAAAcoXEchKM497.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                        <div class="list-wrap">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/1D/10/rBACYVnEdp6ASDIYAAAcoXEchKM497.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list-wrap">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/1D/10/rBACYVnEdp6ASDIYAAAcoXEchKM497.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                        <div class="list-wrap">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/1D/10/rBACYVnEdp6ASDIYAAAcoXEchKM497.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                        <div class="list-wrap">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/1D/10/rBACYVnEdp6ASDIYAAAcoXEchKM497.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="list-wrap1">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/1D/10/rBACYVnEdp6ASDIYAAAcoXEchKM497.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                        <div class="list-wrap1">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/1D/10/rBACYVnEdp6ASDIYAAAcoXEchKM497.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                    </div>
+                    <div class="listhead3">——男士下装——</div>
+                    <div class="list">
+                        <div class="list-wrap1">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/13/C0/rBACVFlTVtmAS6wLAAAT5xJNCHY388.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                        <div class="list-wrap1">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/13/C0/rBACVFlTVtmAS6wLAAAT5xJNCHY388.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                        <div class="list-wrap1">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/13/C0/rBACVFlTVxKAFInMAAAVte0hZuQ950.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                        <div class="list-wrap1">
+                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/13/C0/rBACVFlTVxKAFInMAAAVte0hZuQ950.jpg"></div>
+                            <div class="list-name">风衣/大衣</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
    </div>
 </template>
     
@@ -19,5 +123,45 @@
 </script>
     
 <style lang="css" scoped>
+*{padding:0;margin:0;box-sizing:border-box;}
+a{text-decoration:none;}
+li{list-style:none;}
+body{font:12px/20px "微软雅黑";}
+img{vertical-align:top;}
+html{font-size:100px;}
+.shop-list{width:100%;position:relative;top:0.48rem;}
+.list-left{width:0.86rem;float: left;
+    margin-top:0.4rem;   
+}
+.list-left-ul{
+    width:100%;height:100%;border:1px solid #dddddd;display:flex;flex-wrap: wrap;position:relative;
+    border-top:none;border-bottom:none;}
+.list-left-ul li{white-space: nowrap;font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;
+    width: 100%;height:0.48rem;text-align:center;line-height: 0.48rem;font-size:0.14rem;color:#333;}
+.list-right{width:3.26rem;float:right;}
+.list-inner{width:2.94rem;margin:0 auto;}
+.banner img{width:100%;height:1.32rem;}
+.sub-catelist{width:2.64rem;margin:0 auto;}
+.listhead1,.listhead2,.listhead3{width: 100%;height:0.53rem;text-align:center;line-height: 0.53rem;color:#333;font-size:0.16rem;white-space: nowrap;}
+.list{
+    width: 100%;
     
+    display: flex;
+    flex-flow:column;
+    text-align: center;
+    justify-content: space-around;
+}
+.list-wrap{
+    flex:1;
+}
+.list-img{
+    width:78%;
+    height: 0.7rem;
+}
+.list-img img{width:100%;height:0.63rem}
+.list-name{width:100%;height:0.33rem;text-align: center;line-height: 0.33rem;margin-top:0.06rem;}
+.list-wrap1{
+    width:33.3333%;
+
+}
 </style>

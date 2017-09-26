@@ -104,6 +104,9 @@
         display: flex;
         justify-content: space-around;
         padding-top: 0.13rem;
+        position: absolute;
+        z-index: 100;
+        background-color: #fff;
     }
     .head-bottom a{
         flex-grow: 1;

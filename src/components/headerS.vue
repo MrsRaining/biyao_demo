@@ -92,7 +92,7 @@
         height: 0.27rem;
         cursor: pointer;
         text-align: center;
-        /* text-indent: 0.25rem; */
+         text-indent: 0.25rem; 
         padding-top: 0.03rem;
     }
     .head-top-r img{

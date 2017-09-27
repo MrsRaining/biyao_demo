@@ -1,0 +1,37 @@
+{
+    "success": 1,
+    "data": {
+        "productList": [
+            {
+                "categoryName": "婚纱/礼服 · Vera Wang制造商出品",
+                "item": [
+                    {
+                        "productId": "1300645001",
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/00/33/rBACVFkT4UCAU9sCAAB2fGBczy0874.jpg",
+                        "imageUrlWebp": "",
+                        "isModel": "false",
+                        "isShowIcon": 0,
+                        "price": "2999",
+                        "suId": "1300645001080100001",
+                        "title": "蕾丝钉珠婚纱",
+                        "salePoint": "精致蕾丝钉珠后绑带可调节大裙摆婚纱",
+                        "supplierId": 130064
+                    },
+                    {
+                        "productId": "1300645028",
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/01/ED/rBACW1kT4UGAZvAWAACUKfRmbQ4720.jpg",
+                        "imageUrlWebp": "",
+                        "isModel": "false",
+                        "isShowIcon": 0,
+                        "price": "1699",
+                        "suId": "1300645028130400001",
+                        "title": "刺绣蕾丝婚纱",
+                        "salePoint": "浪漫缎质腰带高档刺绣蕾丝婚纱",
+                        "supplierId": 130064
+                    }
+                ]
+            }
+        ]
+    },
+    "error": null
+}

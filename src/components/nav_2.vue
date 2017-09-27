@@ -59,8 +59,6 @@
         created() {       
             this.$http.get("../../static/data/menWear/coat.json").then(res => {
                 this.dataList = res.body.data.productList;
-                console.log(res);
-                console.log(this.dataList);
             }, err => {
                 console.log(err);
             });

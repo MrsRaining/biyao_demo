@@ -249,8 +249,7 @@ li{list-style:none;}
 body{font:12px/20px "微软雅黑";}
 img{vertical-align:top;}
 html{font-size:100px;}
-.m_title{
-;width:100%;height:1.78rem;background: url('https://static.biyao.com/m/img/base/grzxlg.png?v=biyao_2088d40') no-repeat;
+.m_title{width:100%;height:1.78rem;background: url('https://static.biyao.com/m/img/base/grzxlg.png?v=biyao_2088d40') no-repeat;
 background-size:100% 100%;}
 .m_m1{width: 100%;height:0.97rem;padding-top:0.1px;}
 .m1_img{width:0.8rem;height:0.8rem;margin:0 auto;border-radius: 50%;margin-top:0.15rem;}

@@ -2,7 +2,7 @@
     <div>
        <header>
            <div class="head-top">
-               <div class="head-top-l">
+               <div class="head-top-l" @click="backFn">
                    <span>请输入要搜索的商品</span>
                </div>
                <div class="head-top-r" @click="headShowFn">
@@ -22,13 +22,13 @@
                    </p>
                    <p>分类</p>
                </router-link>
-               <router-link to="/cart">
+               <router-link :to="{path: '/cart', query: {title: '购物车'}}">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b5.png?v=biyao_000cf98">
                    </p>
                    <p>购物车</p>
                </router-link>
-               <router-link to="/mine">
+               <router-link :to="{path: '/mine', query: {title: '个人中心'}}">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b6.png?v=biyao_4b664ee">
                    </p>
@@ -50,6 +50,9 @@
         methods: {
             headShowFn() {
                 this.headShow = !this.headShow;
+            },
+            backFn() {
+                this.$router.go(-1);
             }
         }
     }

@@ -2,8 +2,8 @@
     <div>
        <header>
            <div class="head-top">
-              <span class="head-top-l"></span>
-              <span class="head-top-m">购物车</span>
+              <span class="head-top-l" @click="backFn"></span>
+              <span class="head-top-m">{{ this.$route.query.title }}</span>
               <span class="head-top-r" @click="headShowFn">
                   <img src="https://static.biyao.com/m/img/icon/list.png?v=biyao_a2ed1bc">
               </span>
@@ -21,13 +21,13 @@
                    </p>
                    <p>分类</p>
                </router-link>
-               <router-link to="/cart">
+               <router-link :to="{path: '/cart', query: {title: '购物车'}}">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b5.png?v=biyao_000cf98">
                    </p>
                    <p>购物车</p>
                </router-link>
-               <router-link to="/mine">
+               <router-link :to="{path: '/mine', query: {title: '个人中心'}}">
                    <p>
                        <img src="https://static.biyao.com/m/img/icon/b6.png?v=biyao_4b664ee">
                    </p>
@@ -49,7 +49,13 @@
         methods: {
             headShowFn() {
                 this.headShow = !this.headShow;
+            },
+            backFn() {
+                this.$router.go(-1);
             }
+        },
+        created() {
+            // console.log(this.$router);
         }
     }
 </script>

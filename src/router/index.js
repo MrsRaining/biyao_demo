@@ -6,6 +6,7 @@ import Cart from '../views/cart.vue'
 import Mine from '../views/mine.vue'
 import nav_1 from '../components/nav_1.vue'
 import nav_2 from '../components/nav_2.vue'
+import Details from '../views/details.vue'
 
 
 Vue.use(Router)
@@ -40,6 +41,10 @@ export default new Router({
     {
       path: '/',
       redirect: '/home'
+    },
+    {
+      path: "/details",
+      component: Details
     }
   ]
 })

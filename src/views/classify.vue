@@ -35,8 +35,10 @@
                             <div class="list-name">风衣/大衣</div>
                         </div>
                         <div class="list-wrap">
-                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/18/76/rBACVFmSkKqAHYBNAAAfdj1aPOI825.jpg"></div>
-                            <div class="list-name">风衣/大衣</div>
+                            <router-link to='/fenlei'>
+                                <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/18/76/rBACVFmSkKqAHYBNAAAfdj1aPOI825.jpg"></div>
+                                <div class="list-name">风衣/大衣</div>
+                            </router-link>
                         </div>
                         <div class="list-wrap">
                             <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/18/76/rBACVFmSkKqAHYBNAAAfdj1aPOI825.jpg"></div>
@@ -113,11 +115,21 @@
         name: "classify",
         data () {
             return {
-                 
+             dataList:[]
             };
         },
+        created(){
+            this.$http.get("../../static/data/yingtong/yingeryongpin.json").then(res=> {
+                console.log(res)
+                // this.list = JSON.parse(res.data).data
+            },err=>{
+                console.log(err);
+            });
+        },
         components: {
-
+            change(){
+                return this.$route.params.id
+            }
         }
     }
 </script>

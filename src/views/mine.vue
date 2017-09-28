@@ -250,7 +250,7 @@ body{font:12px/20px "微软雅黑";}
 img{vertical-align:top;}
 html{font-size:100px;}
 .m_title{
-;width:100%;height:1.78rem;background: url('https://static.biyao.com/m/img/base/grzxlg.png?v=biyao_2088d40') no-repeat;
+width:100%;height:1.78rem;background: url('https://static.biyao.com/m/img/base/grzxlg.png?v=biyao_2088d40') no-repeat;
 background-size:100% 100%;}
 .m_m1{width: 100%;height:0.97rem;padding-top:0.1px;}
 .m1_img{width:0.8rem;height:0.8rem;margin:0 auto;border-radius: 50%;margin-top:0.15rem;}
@@ -263,7 +263,7 @@ background-size:100% 100%;}
 .main_wrap_list{width:100%}
 .main_wrap_list a{width:100%;height:0.55rem;display:block;background-color:#fff;line-height:0.45rem;border-bottom:1px solid #ccc}
 .main_wrap_list a p{display: inline-block;float:left;margin-left:0.2rem;font-size:0.14rem;color:#333;}
-.main_wrap_list a div{float: right;margin-right:0.2rem;font-size:0.18rem;height:0.45rem;display: inline-block;font-family:宋体;color:#333;}
+.main_wrap_list a div{float:right;margin-right:0.2rem;font-size:0.18rem;height:0.45rem;display: inline-block;font-family:宋体;color:#333;}
 .main_wrap_list .a1{margin-top:0.1rem}
 .order_messge_tip{width:100%;line-height: 1.3rem;text-align: center;color:#878787;}
 .footer_bd{width:100%;background-color:#f5f5f5;position:fixed;bottom:0;left: 0;}

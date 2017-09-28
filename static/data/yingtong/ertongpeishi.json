@@ -1,0 +1,501 @@
+{
+    "success": 1, 
+    "data": {
+        "productList": [
+            {
+                "categoryName": "内衣/睡衣 · 英国乔治王子服装制造商出品", 
+                "item": [
+                    {
+                        "productId": "1301135021", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/01/F4/rBACW1kT4WuAbSQFAACQq691z_M074.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "129", 
+                        "suId": "1301135021030100001", 
+                        "title": "莫代尔内衣套", 
+                        "salePoint": "兰精莫代尔 超弹力 轻盈细腻 透气舒适", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1301135076", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4WyAbAE0AACRUCfETS4007.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "59", 
+                        "suId": "1301135076010000001", 
+                        "title": "纯棉内裤三条装", 
+                        "salePoint": "健康纯棉 弹力舒适 安全印染 贴身柔软", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1301135109", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/11/3E/rBACYVkj92mAANPqAACYRI6c40A398.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "69", 
+                        "suId": "1301135109010000001", 
+                        "title": "女童棉氨平角裤三条装", 
+                        "salePoint": "精梳棉 弹力面料 原创设计 三条组装", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1301135009", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/01/F4/rBACW1kT4WqAbPFWAACYekSFiJE154.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "139", 
+                        "suId": "1301135009010100001", 
+                        "title": "女童7条装三角裤", 
+                        "salePoint": "兰精莫代尔 柔软滑爽 贴身舒适 三角裤", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1300925010", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/01/F0/rBACYVkT4VqAfEPPAABixoA7ddI021.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "129", 
+                        "suId": "1300925010030900001", 
+                        "title": "融暄 天竺棉儿童家居服", 
+                        "salePoint": "天竺棉针织条纹 ，天竺棉100%", 
+                        "supplierId": 130092
+                    }, 
+                    {
+                        "productId": "1301135156", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/1B/54/rBACW1mj6jiAc-sgAACOLalz5mI439.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "69", 
+                        "suId": "1301135156010000001", 
+                        "title": "男童棉氨平角裤三条装", 
+                        "salePoint": "精梳棉 弹力面料 原创设计 三条组装", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1301135131", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/15/26/rBACYVlP3XqAGKytAACcYe0sOJk180.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "89", 
+                        "suId": "1301135131010000001", 
+                        "title": "男童莫代尔平角裤三条装", 
+                        "salePoint": "奥地利兰精莫代尔 柔软滑爽 贴身舒适", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1301135008", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4WqADMJxAACaI-5-KVw701.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "139", 
+                        "suId": "1301135008010100001", 
+                        "title": "男童7条装三角裤", 
+                        "salePoint": "进口奥地利兰精莫代尔 零触感", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1301135119", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/11/EA/rBACVFk-WsCANRCyAACfPIUdSIg043.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "89", 
+                        "suId": "1301135119010000001", 
+                        "title": "女童莫代尔平角裤三条装", 
+                        "salePoint": "奥地利兰精莫代尔 柔软滑爽 贴身舒适", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1301135094", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/1C/A7/rBACW1m7jWWAEvb8AACYQ39YkNM806.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "129", 
+                        "suId": "1301135094010000001", 
+                        "title": "卡通格纹家居服", 
+                        "salePoint": "弹力棉氨面料 童趣卡通印花", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1301135011", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4WqAQIIMAACZ8wlXTTQ001.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "109", 
+                        "suId": "1301135011080000001", 
+                        "title": "蝴蝶睡衣套装", 
+                        "salePoint": "弹力棉氨 活动零束缚 印花清新俏皮", 
+                        "supplierId": 130113
+                    }
+                ]
+            }, 
+            {
+                "categoryName": "童袜 · 万达孩子王制造商出品", 
+                "item": [
+                    {
+                        "productId": "1301135023", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/00/3A/rBACVFkT4WuAN7oCAABpMoB4qSA234.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "59", 
+                        "suId": "1301135023010000001", 
+                        "title": "男女童纯棉袜七双装", 
+                        "salePoint": "无骨棉袜 舒适透气 7色健康袜", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1300945016", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/01/F0/rBACYVkT4V2AZetzAABD9OODLyE028.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "69", 
+                        "suId": "1300945016010100001", 
+                        "title": "运动&学院防臭学生袜6双装", 
+                        "salePoint": "优质精梳棉，学院款加运动款诠释青春", 
+                        "supplierId": 130094
+                    }, 
+                    {
+                        "productId": "1300945009", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/1A/82/rBACYVmWXvyAAi8dAAB50-czd_E605.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "69", 
+                        "suId": "1300945009030000001", 
+                        "title": "螺纹连裤童袜2条", 
+                        "salePoint": "杜邦氨纶弹性、舒适感不在话下", 
+                        "supplierId": 130094
+                    }, 
+                    {
+                        "productId": "1300945010", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/1A/86/rBACW1mWXxKAU0NsAACOR_eEZTo592.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "69", 
+                        "suId": "1300945010060000001", 
+                        "title": "平纹连裤童袜2条", 
+                        "salePoint": "裤腰松紧带工艺，宝贝不再束缚", 
+                        "supplierId": 130094
+                    }, 
+                    {
+                        "productId": "1300945011", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/12/5D/rBACVFlB-mSAP2ISAABpVcO9iEo442.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "59", 
+                        "suId": "1300945011100100001", 
+                        "title": "纯棉婴童袜6双", 
+                        "salePoint": "杜邦氨纶高弹性，宝宝的脚不受束缚", 
+                        "supplierId": 130094
+                    }, 
+                    {
+                        "productId": "1301135032", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/00/3A/rBACVFkT4WuALQHPAACd2-_MSBI707.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "59", 
+                        "suId": "1301135032090500001", 
+                        "title": "彩棉婴儿袜六双装", 
+                        "salePoint": "天然彩棉，吸湿透气，拒绝臭脚、烂脚丫", 
+                        "supplierId": 130113
+                    }, 
+                    {
+                        "productId": "1300945008", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/1A/86/rBACW1mWXt6ANLf6AAB3UI3viR0655.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "69", 
+                        "suId": "1300945008060000001", 
+                        "title": "镂空连裤童袜2双", 
+                        "salePoint": "移圈织法美观透气，俏皮中不失童真", 
+                        "supplierId": 130094
+                    }, 
+                    {
+                        "productId": "1300945012", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/01/F1/rBACW1kT4VyAUaiDAABoEQo4Q10714.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "59", 
+                        "suId": "1300945012010100001", 
+                        "title": "多穿法童袜6双装", 
+                        "salePoint": "柔软天然棉  环保活性染色 绿色健康", 
+                        "supplierId": 130094
+                    }
+                ]
+            }, 
+            {
+                "categoryName": "书包/文具 · Columbia等制造商出品", 
+                "item": [
+                    {
+                        "productId": "1301015014", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/18/D5/rBACYVmBc0KAGxWKAACWasqCR9o697.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "229", 
+                        "suId": "1301015014010100001", 
+                        "title": "4至6年级减负书包", 
+                        "salePoint": "国家婴幼A类标准面料，3D立体压模减负背负，科学收纳，一体开合，签名定制", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301010007", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/03/E1/rBACYVkUlVCAJxfoAACeVOZyXnU269.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "true", 
+                        "isShowIcon": 0, 
+                        "price": "159", 
+                        "suId": "1301010007000000030", 
+                        "title": "1至4年级减负书包", 
+                        "salePoint": "国标A类减负儿童书包", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301010011", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/03/E1/rBACYVkUlVCAP7ZuAACfglsAG7k937.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "true", 
+                        "isShowIcon": 0, 
+                        "price": "229", 
+                        "suId": "1301010011000000000", 
+                        "title": "4至6年级减负书包", 
+                        "salePoint": "国标A类减负儿童书包", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301010017", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/03/E2/rBACW1kUlVCAB4_YAACa5uC2uF0701.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "true", 
+                        "isShowIcon": 0, 
+                        "price": "199", 
+                        "suId": "1301010017000000000", 
+                        "title": "1至3年级减负书包", 
+                        "salePoint": "国标A类亲肤材质、全方位荧光警示标识", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301015013", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/19/4C/rBACW1mH47aARdohAABpXDQugyg245.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "79", 
+                        "suId": "1301015013010100001", 
+                        "title": "男款学生笔袋2件组合装", 
+                        "salePoint": "耐磨防水，文具专用收纳隔层，精致工艺，致密缝纫", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301010012", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/17/99/rBACVFmIHJuEDJ4kAAAAAKdEbqs304.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "true", 
+                        "isShowIcon": 0, 
+                        "price": "199", 
+                        "suId": "1301010012000000000", 
+                        "title": "1至3年级减负书包", 
+                        "salePoint": "国标A类减负儿童书包", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301015012", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/19/49/rBACYVmH4cOARI1UAABo2Iz8kiY020.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "69", 
+                        "suId": "1301015012010100001", 
+                        "title": "女款学生笔袋2件组合装", 
+                        "salePoint": "耐磨防水，文具专用收纳隔层，精致工艺，致密缝纫", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301010014", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/02/29/rBACVFkUlVCACSc5AABBIBTY9yI590.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "true", 
+                        "isShowIcon": 0, 
+                        "price": "99", 
+                        "suId": "1301010014000000000", 
+                        "title": "防走失牵引绳背包", 
+                        "salePoint": "国标A类缓弹防走失牵引绳", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301010016", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/03/E1/rBACYVkUlVCAZaBkAACZ2PBU2cg051.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "true", 
+                        "isShowIcon": 0, 
+                        "price": "119", 
+                        "suId": "1301010016000000000", 
+                        "title": "4至6岁卡通背包", 
+                        "salePoint": "国标A类亲肤材质、全方位荧光警示标识", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301015001", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/00/53/wKhkVVkBnEyABxi0AACfftneirQ817.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "99", 
+                        "suId": "1301015001010100001", 
+                        "title": "4至6岁卡通背包", 
+                        "salePoint": "国家婴幼A类亲肤材质，轻质，透气肩带", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301015017", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/1A/6D/rBACW1mVSKSAQPE5AACb8Fcjsgo606.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "99", 
+                        "suId": "1301015017010100001", 
+                        "title": "4至6岁儿童背包", 
+                        "salePoint": "国家A类标准安全材质，轻量减负，卡通萌趣造型，礼盒包装", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301015002", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/00/57/wKhkVVkBrICAM2J9AACBhAa4V1M899.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "69", 
+                        "suId": "1301015002010100001", 
+                        "title": "1至6岁卡通斜挎包", 
+                        "salePoint": "国家婴幼A类亲肤材质，轻，肩带可调节", 
+                        "supplierId": 130101
+                    }, 
+                    {
+                        "productId": "1301335007", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/15/98/rBACW1lUyZ-AGyUgAABeHRNnYtA503.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "249", 
+                        "suId": "1301335007010100001", 
+                        "title": "WIN兰博基尼儿童背包", 
+                        "salePoint": "兰博基尼原厂授权 环保耐用 轻便 时尚", 
+                        "supplierId": 130133
+                    }, 
+                    {
+                        "productId": "1301010015", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/16/82/rBACW1ljESWEXi9sAAAAANCoRYs053.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "true", 
+                        "isShowIcon": 0, 
+                        "price": "259", 
+                        "suId": "1301010015000000000", 
+                        "title": "1至3年级拉杆书包", 
+                        "salePoint": "拉杆/双肩两用书包、爬楼梯六轮拉杆", 
+                        "supplierId": 130101
+                    }
+                ]
+            }, 
+            {
+                "categoryName": "儿童拉杆箱 · Columbia等制造商出品", 
+                "item": [
+                    {
+                        "productId": "1301335002", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/00/3D/rBACVFkT4XuAFF8SAABkjxh9GBE414.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "329", 
+                        "suId": "1301335002010100001", 
+                        "title": "WIN奔驰儿童拉杆箱", 
+                        "salePoint": "奔驰汽车原厂授权 多功能 时尚 耐用", 
+                        "supplierId": 130133
+                    }, 
+                    {
+                        "productId": "1300600033", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/11/55/rBACW1klGuKECVOEAAAAAJQF7_k990.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "true", 
+                        "isShowIcon": 0, 
+                        "price": "239", 
+                        "suId": "1300600033000000000", 
+                        "title": "GF百搭儿童拉杆箱", 
+                        "salePoint": "经典ABS+PC材质更轻盈更时尚", 
+                        "supplierId": 130060
+                    }, 
+                    {
+                        "productId": "1301335006", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/12/5C/rBACVFlB9RGAWcdyAABF2cyifHw714.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "349", 
+                        "suId": "1301335006060100001", 
+                        "title": "WIN蝙蝠侠战车儿童拉杆箱", 
+                        "salePoint": "由电影BATMAN原版授权 炫酷独特蝙蝠车造型 多功能 时尚 耐用", 
+                        "supplierId": 130133
+                    }, 
+                    {
+                        "productId": "1301335008", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/15/B4/rBACW1lWA-KAZxM1AABUn3TRNO8593.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "299", 
+                        "suId": "1301335008030100001", 
+                        "title": "WIN飞机模型儿童拉杆箱", 
+                        "salePoint": "炫酷独特飞机造型 多功能 时尚 环保耐用", 
+                        "supplierId": 130133
+                    }
+                ]
+            }, 
+            {
+                "categoryName": "帽子/围巾 · DIESEL等制造商出品", 
+                "item": [
+                    {
+                        "productId": "1301045007", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/00/38/rBACVFkT4V6AMZvlAACbNQHijv0856.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "99", 
+                        "suId": "1301045007030900001", 
+                        "title": "经典纯棉针织围巾", 
+                        "salePoint": "精梳夹花纯棉 柔软 舒适 透气 方便", 
+                        "supplierId": 130104
+                    }, 
+                    {
+                        "productId": "1301135133", 
+                        "imageUrl": "https://bfs.biyao.com/group1/M00/15/95/rBACYVlUwAOAYOYvAACXhUTMzLk804.jpg", 
+                        "imageUrlWebp": "", 
+                        "isModel": "false", 
+                        "isShowIcon": 0, 
+                        "price": "159", 
+                        "suId": "1301135133010000001", 
+                        "title": "加密防水双肩亲子童包", 
+                        "salePoint": "加密防水 质感镜面牛皮 荧光撞色 英伦风范", 
+                        "supplierId": 130113
+                    }
+                ]
+            }
+        ]
+    }, 
+    "error": null
+}

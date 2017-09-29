@@ -97,20 +97,18 @@ html{
     background-color: #FAFAFA;    
 }
 .menList ul{
-    width: 2.04rem;
+    width: 100%;
     height: .4rem;
     margin-left: .15rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 .menList li{
-    width: .38rem;
+    padding: 0 .2rem;
     height: .24rem;
     line-height: .24rem;
     text-align: center;
     font-size: .12rem;
-    flex: 1;
 }
 .menList li a{
     color: gray;

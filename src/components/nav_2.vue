@@ -104,7 +104,7 @@ html{
     align-items: center;
 }
 .menList li{
-    padding: 0 .2rem;
+    padding: 0 .1rem;
     height: .24rem;
     line-height: .24rem;
     text-align: center;

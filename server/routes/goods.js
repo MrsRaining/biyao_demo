@@ -18,17 +18,30 @@ mongoose.connection.on("disconnected", function () {
 });
 
 router.get("/", function (req, res, next) {
+	// res.json({
+	// 	status: "0",
+	// 	msg: req
+	// });
+	// console.log(req.param("name"));
+	var productName = req.param("name");
+	console.log(req.param("name"));
 	Goods.findOne({}, function (err, goodDoc) {
+		
 		if(err) {
 			res.json({
 				status: "1",
 				msg: err.message
 			});
 		}else{
-			res.json({
-				status: "0",
-				msg: goodDoc
-			});
+			for(item in goodDoc) {
+				if(item == productName) {
+					res.json({
+						status: "0",
+						msg: goodDoc[item]
+					});
+					console.log(goodDoc[item]);
+				}
+			}
 		}
 	});
 })

@@ -3,26 +3,16 @@
         <!-- 男装列表 -->
     <div class="menList">
         <ul>
-            <li class="active">
+            <li class="active" v-for="item in dataList" :key="item.id">
                 <a href="#">
-                    男士外装
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    男士上装
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    男士下装
+                    {{ item }}
                 </a>
             </li>
         </ul>
     </div>
 
     <!-- 风衣/大衣专题 -->
-    <div>
+    <div v-for="items in showList" :key="items.id">
         <div class="menTitle">
             <span>风衣/大衣</span>
             <span>PRADA制造商出品</span>
@@ -30,28 +20,14 @@
 
         <!-- 男士服装列表 -->
         <div class="menWear">
-            <div class="menCloth">
+            <div class="menCloth" v-for="list in items.item" :key="list.id">
                 <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/6E/rBACW1m3fReAOidUAACHf02tRJ8077.jpg">
-                    <span>中款商务男风衣</span>
-                    <span>￥799</span>
+                    <img :src="list.imageUrl">
+                    <span>{{ list.title }}</span>
+                    <span>￥{{ list.price }}</span>
                 </a>
             </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1B/3A/rBACVFnCCUmARSM4AAA5-Eqp-PY937.jpg">
-                    <span>纯羊毛连帽双面呢大衣</span>
-                    <span>￥1299</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/6E/rBACW1m3fReAOidUAACHf02tRJ8077.jpg">
-                    <span>中款商务男风衣</span>
-                    <span>￥799</span>
-                </a>
-            </div>
-            <div class="menCloth">
+            <!-- <div class="menCloth">
                 <a href="#">        
                     <img src="https://bfs.biyao.com/group1/M00/1B/3A/rBACVFnCCUmARSM4AAA5-Eqp-PY937.jpg">
                     <span>纯羊毛连帽双面呢大衣</span>
@@ -93,19 +69,33 @@
                     <span>￥799</span>
                 </a>
             </div>
+            <div class="menCloth">
+                <a href="#">        
+                    <img src="https://bfs.biyao.com/group1/M00/1B/3A/rBACVFnCCUmARSM4AAA5-Eqp-PY937.jpg">
+                    <span>纯羊毛连帽双面呢大衣</span>
+                    <span>￥1299</span>
+                </a>
+            </div>
+            <div class="menCloth">
+                <a href="#">        
+                    <img src="https://bfs.biyao.com/group1/M00/1C/6E/rBACW1m3fReAOidUAACHf02tRJ8077.jpg">
+                    <span>中款商务男风衣</span>
+                    <span>￥799</span>
+                </a>
+            </div> -->
         </div>
     </div>
     
 
     <!-- 羽绒/棉服专题 -->
-    <div>
+    <!-- <div>
         <div class="menTitle">
             <span>羽绒/棉服</span>
             <span>PRADA制造商出品</span>
-        </div>
+        </div> -->
 
         <!-- 男士服装列表 -->
-        <div class="menWear">
+        <!-- <div class="menWear">
             <div class="menCloth">
                 <a href="#">        
                     <img src="https://bfs.biyao.com/group1/M00/00/33/rBACVFkT4T6AA2dQAABhoz5JhA0093.jpg">
@@ -114,17 +104,17 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 羽绒/棉服专题 -->
-    <div>
+    <!-- <div>
         <div class="menTitle">
             <span>皮衣/夹克</span>
             <span>PRADA制造商出品</span>
-        </div>
+        </div> -->
 
         <!-- 男士服装列表 -->
-        <div class="menWear">
+        <!-- <div class="menWear">
             <div class="menCloth">
                 <a href="#">        
                     <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
@@ -349,7 +339,8 @@
         <a href="#">
             <img src="https://static.biyao.com/m/img/icon/arror.png?v=biyao_a15cb86">
         </a>
-    </div>
+    </div> -->
+    <h1>{{getData}}</h1>
    </div>
 </template>
     
@@ -358,19 +349,40 @@
         name: "nav_2",
         data () {
             return {
-                data: ""
+                data: "",
+                dataList: [],
+                showList: "",
+                rout: ""
             };
         },
+        methods: {
+    
+        },
         computed: {
-            change() {
-                return this.$route.params.id
+            getData() {
+                this.$http.get("/goods", {
+                params: {
+                    "name": this.$route.params.id
+                }
+            }).then(function(res) {
+                this.dataList = [];
+                this.data = res.data.msg;
+                var i = 0;
+                for(var ele in res.data.msg) {
+                    if(i==0) {
+                        this.showList = res.data.msg[ele].data.productList;
+                    }
+                    this.dataList.push(ele); 
+                    i += 1;
+                }
+            });   
             }
-        }
+        },
     }
 </script>
     
 <style lang="css" scoped>
-    a{
+a{
     display: inline-block;
     text-decoration: none;
 }
@@ -429,6 +441,7 @@ html{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #f5f5f5;
 }
 .menTitle span{
     width: 100%;

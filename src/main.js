@@ -8,6 +8,8 @@ import headerS from './components/headerS'
 import headerT from './components/headerT'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import "../node_modules/vue-awesome-swiper/node_modules/swiper/dist/css/swiper.min.css"
+import vueResource from "vue-resource"
+Vue.use(vueResource)
 Vue.use(VueAwesomeSwiper)
 
 Vue.config.productionTip = false

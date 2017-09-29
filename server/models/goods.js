@@ -3,19 +3,19 @@ var Schema = mongoose.Schema;
 
 var productSchema = new Schema({
 	"nanzhuang": {
-		"nanshiwaitao": {
+		"男士外套": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"nanshishangyi": {
+		"男士上装": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"nanshixiayi": {
+		"男士下装": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -23,25 +23,25 @@ var productSchema = new Schema({
 		}
 	},
 	"nvzhuang": {
-		"nvshishangzhuang": {
+		"女士上装": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"nvshixiazhuang": {
+		"女士下装": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"nvqun": {
+		"女裙": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"tesenvzhuang": {
+		"特色女装": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -49,7 +49,7 @@ var productSchema = new Schema({
 		},
 	},
 	"yanjing": {
-		"yanjing": {
+		"眼镜": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -57,19 +57,19 @@ var productSchema = new Schema({
 		},
 	},
 	"peishi": {
-		"neiyi": {
+		"内衣": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"wazi": {
+		"袜子": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"peishi": {
+		"配饰": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -77,31 +77,31 @@ var productSchema = new Schema({
 		}
 	},
 	"yingtong": {
-		"yingeryongpin": {
+		"婴儿用品": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"wanjuchuangche": {
+		"玩具床车": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"tongzhuangtongxue": {
+		"童装童靴": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"ertongpeishi": {
+		"儿童配饰": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"mamazhuanqu": {
+		"妈妈专区": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -109,13 +109,13 @@ var productSchema = new Schema({
 		}
 	},
 	"xiexue": {
-		"nanxie": {
+		"男鞋": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"nvxie": {
+		"女鞋": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -123,25 +123,25 @@ var productSchema = new Schema({
 		}
 	},
 	"yundong": {
-		"huwaifushi": {
+		"户外服饰": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"yundongfushi": {
+		"运动服饰": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"yundongxie": {
+		"运动鞋": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"yundongzhuangbei": {
+		"运动装备": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -149,19 +149,19 @@ var productSchema = new Schema({
 		}
 	},
 	"piju": {
-		"zhenpipeijian": {
+		"真皮配件": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"nanbao": {
+		"男包": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"nvbao": {
+		"女包": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -169,13 +169,13 @@ var productSchema = new Schema({
 		}
 	},
 	"chuxing": {
-		"chuxingbibei": {
+		"出行必备": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"gongnengxiangbao": {
+		"功能箱包": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -183,7 +183,7 @@ var productSchema = new Schema({
 		}
 	},
 	"gehu": {
-		"gehu": {
+		"个护": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -191,25 +191,25 @@ var productSchema = new Schema({
 		}
 	},
 	"meizhuang": {
-		"jichufufu": {
+		"基础护肤": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"xiangshuicaizhuang": {
+		"香水彩妆": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"xifahufa": {
+		"洗发护发": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"shentihuli": {
+		"身体护理": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -217,13 +217,13 @@ var productSchema = new Schema({
 		}
 	},
 	"jujia": {
-		"jiafang": {
+		"家纺": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"shenghuoyongpin": {
+		"生活用品": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -231,13 +231,13 @@ var productSchema = new Schema({
 		}
 	},
 	"chuju": {
-		"shuiju": {
+		"水具": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"chuju": {
+		"厨具": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -245,7 +245,7 @@ var productSchema = new Schema({
 		}
 	},
 	"jiadian": {
-		"jiadian": {
+		"家电": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -253,19 +253,19 @@ var productSchema = new Schema({
 		}
 	},
 	"jiazhuang": {
-		"chuweiyongpin": {
+		"厨卫用品": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"jiazhuangruanshi": {
+		"家装软饰": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"wujingongju": {
+		"五金工具": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -273,31 +273,31 @@ var productSchema = new Schema({
 		}
 	},
 	"jiaju": {
-		"woshi": {
+		"卧室": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"shufang": {
+		"书房": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"keting": {
+		"客厅": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"canting": {
+		"餐厅": {
 			"success": Number,
 			"data": {
 				"productList": Array
 			}
 		},
-		"ertongjiaju": {
+		"儿童家具": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -305,7 +305,7 @@ var productSchema = new Schema({
 		}
 	},
 	"shuma": {
-		"shuma": {
+		"数码": {
 			"success": Number,
 			"data": {
 				"productList": Array
@@ -313,7 +313,7 @@ var productSchema = new Schema({
 		}
 	},
 	"qipei": {
-		"qipei": {
+		"汽配": {
 			"success": Number,
 			"data": {
 				"productList": Array

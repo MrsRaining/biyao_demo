@@ -4,9 +4,9 @@
            <div class="d-head-top">
                 <swiper :options="swiperOption" class="swiper-box">
                     <swiper-slide class="swiper-item">
-                        <img src="https://bfs.biyao.com/group1/M00/1A/0D/rBACYVmRRfmAIogUAAF8gyo-LsQ369.jpg">
+                        <img :src="showList.imageUrl">
                     </swiper-slide>
-                    <swiper-slide class="swiper-item">
+                    <!-- <swiper-slide class="swiper-item">
                         <img src="https://bfs.biyao.com/group1/M00/18/5A/rBACVFmRRgCACI2uAAGIVZCM4KI412.jpg">
                     </swiper-slide>
                     <swiper-slide class="swiper-item">
@@ -17,15 +17,15 @@
                     </swiper-slide>
                     <swiper-slide class="swiper-item">
                         <img src="https://bfs.biyao.com/group1/M00/1A/F0/rBACYVmby52ADBGUAAGEo1L4vJY403.jpg">
-                    </swiper-slide>
+                    </swiper-slide> -->
                     <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
            </div>
            <div class="d-head-bottom">
-               <p>免洗厨房懒人抹布 3卷装 50节/卷</p>
-               <p>天然纤维和优质木匠材料，吸水性好，吸油不沾油，每张可重复使用十次左右</p>
+               <p>{{ showList.title }}</p>
+               <p>{{ showList.salePoint }}</p>
                <p>
-                   <span class="span-l">￥69</span>
+                   <span class="span-l">￥{{ showList.price }}</span>
                    <span class="span-r">生产周期：15天</span>
                </p>
            </div>
@@ -117,9 +117,23 @@
                     slidesPerView: 1,
                     pagination : '.swiper-pagination',
                     autoplay: 2000
-                }
+                },
+                showList: ""
+
             };
-        }
+        },
+        created() {
+             console.log(this.showList);
+             this.showList = JSON.parse(window.sessionStorage.goodList);
+            //  setTimeout(function () {
+                 
+            //  }, 10);
+        },
+        // computed: {
+        //     showList() {
+        //         return JSON.parse(window.sessionStorage.goodList);
+        //     }
+        // }
     }
 </script>
     

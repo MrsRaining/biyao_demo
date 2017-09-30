@@ -123,7 +123,7 @@ var productSchema = new Schema({
 		}
 	},
 	"yundong": {
-		"户外服饰": {
+		"户外鞋服": {
 			"success": Number,
 			"data": {
 				"productList": Array

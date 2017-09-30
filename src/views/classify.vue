@@ -31,16 +31,22 @@
                     <div class="listhead1">——男士外套——</div>
                     <div class="list">
                         <div class="list-wrap">
-                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/18/76/rBACVFmSkKqAHYBNAAAfdj1aPOI825.jpg"></div>
-                            <div class="list-name">风衣/大衣</div>
+                            <router-link to='/fenlei'>
+                                <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/18/76/rBACVFmSkKqAHYBNAAAfdj1aPOI825.jpg"></div>
+                                <div class="list-name">风衣/大衣</div>
+                            </router-link>
                         </div>
                         <div class="list-wrap">
-                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/18/76/rBACVFmSkKqAHYBNAAAfdj1aPOI825.jpg"></div>
-                            <div class="list-name">风衣/大衣</div>
+                            <router-link to='/fenlei'>
+                                <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/1B/83/rBACW1mlMEiAWNITAAAiWsyngD0082.jpg"></div>
+                                <div class="list-name">羽绒/棉服</div>
+                            </router-link>
                         </div>
                         <div class="list-wrap">
-                            <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/18/76/rBACVFmSkKqAHYBNAAAfdj1aPOI825.jpg"></div>
-                            <div class="list-name">风衣/大衣</div>
+                            <router-link to='/fenlei'>
+                                <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/15/7B/rBACW1lTWD-APUeLAAAgYMZ9cH4426.jpg"></div>
+                                <div class="list-name">皮衣/夹克</div>
+                             </router-link>
                         </div>
                     </div>
                     <div class="listhead2">——男士上装——</div>
@@ -83,7 +89,7 @@
                         </div>
                     </div>
                     <div class="listhead3">——男士下装——</div>
-                    <div class="list">
+                    <div class="list-men">
                         <div class="list-wrap1">
                             <div class="list-img"><img src="https://bfs.biyao.com/group1/M00/13/C0/rBACVFlTVtmAS6wLAAAT5xJNCHY388.jpg"></div>
                             <div class="list-name">风衣/大衣</div>
@@ -113,11 +119,21 @@
         name: "classify",
         data () {
             return {
-                 
+             dataList:[]
             };
         },
+        created(){
+            this.$http.get("../../static/data/yingtong/yingeryongpin.json").then(res=> {
+                console.log(res)
+                // this.list = JSON.parse(res.data).data
+            },err=>{
+                console.log(err);
+            });
+        },
         components: {
-
+            change(){
+                return this.$route.params.id
+            }
         }
     }
 </script>
@@ -131,7 +147,8 @@ img{vertical-align:top;}
 html{font-size:100px;}
 .shop-list{width:100%;position:relative;top:0.48rem;}
 .list-left{width:0.86rem;float: left;
-    margin-top:0.4rem;   
+      flex-flow:column;
+    justify-content: space-around;
 }
 .list-left-ul{
     width:100%;height:100%;border:1px solid #dddddd;display:flex;flex-wrap: wrap;position:relative;
@@ -147,9 +164,7 @@ html{font-size:100px;}
     width: 100%;
     
     display: flex;
-    flex-flow:column;
-    text-align: center;
-    justify-content: space-around;
+    
 }
 .list-wrap{
     flex:1;
@@ -161,7 +176,8 @@ html{font-size:100px;}
 .list-img img{width:100%;height:0.63rem}
 .list-name{width:100%;height:0.33rem;text-align: center;line-height: 0.33rem;margin-top:0.06rem;}
 .list-wrap1{
-    width:33.3333%;
+    width:32.2%;
+    display: inline-block;
 
 }
 </style>

@@ -12,6 +12,7 @@ import Details from '../views/details.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: '/home',

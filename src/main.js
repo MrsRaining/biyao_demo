@@ -9,17 +9,33 @@ import headerT from './components/headerT'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import "../node_modules/vue-awesome-swiper/node_modules/swiper/dist/css/swiper.min.css"
 import vueResource from "vue-resource"
+import Vuex from "vuex"
 Vue.use(vueResource)
 Vue.use(VueAwesomeSwiper)
+Vue.use(Vuex)
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 Vue.component('header-s', headerS);
 Vue.component('header-t', headerT);
+
+//利用vuex统一管理组件组件之间需要传递的参数。
+const store = new Vuex.Store({
+    state: {
+      dataList: "",
+    },
+    mutations: {
+        commitData(state, data) {
+            state.dataList = data;
+        }
+    }
+});
+
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

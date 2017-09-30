@@ -3,8 +3,8 @@
         <!-- 男装列表 -->
     <div class="menList">
         <ul>
-            <li class="active" v-for="item in dataList" :key="item.id">
-                <a href="#">
+            <li v-for="(item, index) in dataList" :key="item.id" :class="{'active': nowNum==index}" @click="colorFn(index, item)">
+                <a href="javacript:void(0);">
                     {{ item }}
                 </a>
             </li>
@@ -14,332 +14,22 @@
     <!-- 风衣/大衣专题 -->
     <div v-for="items in showList" :key="items.id">
         <div class="menTitle">
-            <span>风衣/大衣</span>
-            <span>PRADA制造商出品</span>
+            <span>{{ items.categoryName.split("·")[0]}}</span>
+            <span>{{ items.categoryName.split("·")[1]}}</span>
         </div>
-
+        
         <!-- 男士服装列表 -->
         <div class="menWear">
-            <div class="menCloth" v-for="list in items.item" :key="list.id">
-                <a href="#">        
+            <div class="menCloth" v-for="list in items.item" :key="list.id" @click="dataShow(list)">
+                <router-link to="/details">        
                     <img :src="list.imageUrl">
                     <span>{{ list.title }}</span>
                     <span>￥{{ list.price }}</span>
-                </a>
+                </router-link>
             </div>
-            <!-- <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1B/3A/rBACVFnCCUmARSM4AAA5-Eqp-PY937.jpg">
-                    <span>纯羊毛连帽双面呢大衣</span>
-                    <span>￥1299</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/6E/rBACW1m3fReAOidUAACHf02tRJ8077.jpg">
-                    <span>中款商务男风衣</span>
-                    <span>￥799</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1B/3A/rBACVFnCCUmARSM4AAA5-Eqp-PY937.jpg">
-                    <span>纯羊毛连帽双面呢大衣</span>
-                    <span>￥1299</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/6E/rBACW1m3fReAOidUAACHf02tRJ8077.jpg">
-                    <span>中款商务男风衣</span>
-                    <span>￥799</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1B/3A/rBACVFnCCUmARSM4AAA5-Eqp-PY937.jpg">
-                    <span>纯羊毛连帽双面呢大衣</span>
-                    <span>￥1299</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/6E/rBACW1m3fReAOidUAACHf02tRJ8077.jpg">
-                    <span>中款商务男风衣</span>
-                    <span>￥799</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1B/3A/rBACVFnCCUmARSM4AAA5-Eqp-PY937.jpg">
-                    <span>纯羊毛连帽双面呢大衣</span>
-                    <span>￥1299</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/6E/rBACW1m3fReAOidUAACHf02tRJ8077.jpg">
-                    <span>中款商务男风衣</span>
-                    <span>￥799</span>
-                </a>
-            </div> -->
         </div>
     </div>
     
-
-    <!-- 羽绒/棉服专题 -->
-    <!-- <div>
-        <div class="menTitle">
-            <span>羽绒/棉服</span>
-            <span>PRADA制造商出品</span>
-        </div> -->
-
-        <!-- 男士服装列表 -->
-        <!-- <div class="menWear">
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/00/33/rBACVFkT4T6AA2dQAABhoz5JhA0093.jpg">
-                    <span>南连帽羽绒服</span>
-                    <span>￥579</span>
-                </a>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- 羽绒/棉服专题 -->
-    <!-- <div>
-        <div class="menTitle">
-            <span>皮衣/夹克</span>
-            <span>PRADA制造商出品</span>
-        </div> -->
-
-        <!-- 男士服装列表 -->
-        <!-- <div class="menWear">
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/1C/A0/rBACW1m7PR-AZAeRAACZjIolm6w838.jpg">
-                    <span>树纹肌理感连帽针织外套</span>
-                    <span>￥339</span>
-                </a>
-            </div>
-            <div class="menCloth">
-                <a href="#">        
-                    <img src="https://bfs.biyao.com/group1/M00/01/F3/rBACYVkT4W6AX3xcAABaVex5gsg808.jpg">
-                    <span>羊皮休闲夹克</span>
-                    <span>￥1579</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="topBack">
-        <a href="#">
-            <img src="https://static.biyao.com/m/img/icon/arror.png?v=biyao_a15cb86">
-        </a>
-    </div> -->
     <h1>{{getData}}</h1>
    </div>
 </template>
@@ -352,14 +42,26 @@
                 data: "",
                 dataList: [],
                 showList: "",
-                rout: ""
+                nowNum: 0
             };
         },
         methods: {
-    
+            colorFn(index, item) {
+                this.nowNum = index;
+                for(var j in this.data) {
+                    if(j == item) {
+                        this.showList = this.data[j].data.productList;
+                    }
+                }
+            },
+            dataShow(data) {
+                window.sessionStorage.goodList = JSON.stringify(data);
+                console.log(111,data);
+            }
         },
         computed: {
             getData() {
+                this.nowNum = 0;
                 this.$http.get("/goods", {
                 params: {
                     "name": this.$route.params.id
@@ -408,7 +110,6 @@ html{
     background: #FAFAFA;    
 }
 .menList ul{
-    width: 2.04rem;
     height: .4rem;
     margin-left: .15rem;
     display: flex;

@@ -1,23 +1,21 @@
 <template>
     <div class="details-outer">
+       <header-t></header-t>
        <div class="d-head">
            <div class="d-head-top">
                 <swiper :options="swiperOption" class="swiper-box">
                     <swiper-slide class="swiper-item">
                         <img :src="showList.imageUrl">
                     </swiper-slide>
-                    <!-- <swiper-slide class="swiper-item">
-                        <img src="https://bfs.biyao.com/group1/M00/18/5A/rBACVFmRRgCACI2uAAGIVZCM4KI412.jpg">
+                    <swiper-slide class="swiper-item">
+                        <img :src="showList.imageUrl">
                     </swiper-slide>
                     <swiper-slide class="swiper-item">
-                        <img src="https://bfs.biyao.com/group1/M00/1A/12/rBACW1mRRlWAHA8QAAGC3sa0JV0906.jpg">
+                        <img :src="showList.imageUrl">
                     </swiper-slide>
                     <swiper-slide class="swiper-item">
-                        <img src="https://bfs.biyao.com/group1/M00/1A/11/rBACYVmRXJuAWKZmAAGFVnCq2iE713.jpg">
+                        <img :src="showList.imageUrl">
                     </swiper-slide>
-                    <swiper-slide class="swiper-item">
-                        <img src="https://bfs.biyao.com/group1/M00/1A/F0/rBACYVmby52ADBGUAAGEo1L4vJY403.jpg">
-                    </swiper-slide> -->
                     <div class="swiper-pagination" slot="pagination"></div>
                 </swiper>
            </div>
@@ -84,28 +82,33 @@
        <div class="d-main3">
            <p>以更健康的方式摆脱传统抹布依赖症</p>
            <div>
-               <img src="https://bfs.biyao.com/group1/M00/18/5A/rBACVFmRR9SASg8-AAOeYQ4HViQ190.jpg" alt="">
+               <img :src="showList.imageUrl" alt="">
            </div>
        </div>
        <div class="d-main3">
            <p>以更健康的方式摆脱传统抹布依赖症</p>
            <div>
-               <img src="https://bfs.biyao.com/group1/M00/18/5A/rBACVFmRR9SASg8-AAOeYQ4HViQ190.jpg" alt="">
+               <img :src="showList.imageUrl" alt="">
            </div>
        </div>
-       <div class="d-main3">
-           <p>以更健康的方式摆脱传统抹布依赖症</p>
-           <div>
-               <img src="https://bfs.biyao.com/group1/M00/18/5A/rBACVFmRR9SASg8-AAOeYQ4HViQ190.jpg" alt="">
-           </div>
-       </div>
-       <div class="d-main3">
-           <p>以更健康的方式摆脱传统抹布依赖症</p>
-           <div>
-               <img src="https://bfs.biyao.com/group1/M00/18/5A/rBACVFmRR9SASg8-AAOeYQ4HViQ190.jpg" alt="">
-           </div>
-       </div>
+        <div class="footer">
+            <a href="javasript:void(0);" class="foot-left">
+                <p><img src="https://static.biyao.com/m/img/icon/live.png?v=biyao_8242561"></p>
+                <p>客服</p>
+            </a>
+            <a href="javasript:void(0);" class="foot-left">
+                <p><img src="https://static.biyao.com/m/img/base/icon_shopcarNew.png?v=biyao_254086b"></p>
+                <p>购物车</p>
+            </a>
+            <a href="javasript:void(0);" class="foot-right">
+                <p>加入购物车</p>
+            </a>
+            <a href="javasript:void(0);" class="foot-right">
+                <p>立即购买</p>
+            </a>
+        </div>
    </div>
+   
 </template>
     
 <script>
@@ -116,24 +119,21 @@
                  swiperOption: {
                     slidesPerView: 1,
                     pagination : '.swiper-pagination',
-                    autoplay: 2000
+                    autoplay: 2000,
+                    loop: true
                 },
                 showList: ""
 
             };
         },
+        //这里有个问题！！
         created() {
-             console.log(this.showList);
-             this.showList = JSON.parse(window.sessionStorage.goodList);
-            //  setTimeout(function () {
-                 
-            //  }, 10);
+            this.showList = JSON.parse(window.sessionStorage.goodList);
+            console.log(this.showList);    
         },
-        // computed: {
-        //     showList() {
-        //         return JSON.parse(window.sessionStorage.goodList);
-        //     }
-        // }
+        methods: {
+
+        }
     }
 </script>
     
@@ -294,5 +294,35 @@
     .d-main3>div img{
         width: 100%;
         height: 100%;
+    }
+    .footer{
+        display: flex;
+        justify-content: space-around;
+        height: 0.49rem;
+        width: 100%;
+        background-color: #fff;
+        border-top: 1px solid #cccccc;
+    }
+    .footer a{
+        
+    }
+    .footer .foot-left img{
+        width: 0.25rem;
+        height: 0.25rem;
+    }
+    .footer p{
+        text-align: center;
+    }
+    .footer .foot-left{
+        width: 16.4%;
+        border-right: 1px solid #f2f2f2;
+    }
+    .footer .foot-right{
+        width: 33.2%;
+    }
+    .footer .foot-right p{
+        line-height: 0.49rem;
+        font-size: 0.14rem;
+        color: #7f4395;
     }
 </style>

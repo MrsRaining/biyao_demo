@@ -64,6 +64,7 @@
     header{
         width: 100%;
         box-shadow: 0px 0px 1px #d9d8d8;
+        background-color: #fff;
     }
     .head-top{
         height: 0.2rem;
@@ -90,6 +91,7 @@
     .head-top-m{
         float: left;
         width: 58%;
+        height: 0.2rem;
         text-align: center;
         font-size: 0.16rem;
         line-height: 0.2rem;

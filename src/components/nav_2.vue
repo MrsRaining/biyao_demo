@@ -20,12 +20,12 @@
         
         <!-- 男士服装列表 -->
         <div class="menWear">
-            <div class="menCloth" v-for="list in items.item" :key="list.id" @click="dataShow(list)">
-                <router-link to="/details">        
+            <div class="menCloth" v-for="list in items.item" :key="list.id">
+                <a href="javasript:void(0);" @click="dataShow(list)">        
                     <img :src="list.imageUrl">
                     <span>{{ list.title }}</span>
                     <span>￥{{ list.price }}</span>
-                </router-link>
+                </a>
             </div>
         </div>
     </div>
@@ -54,9 +54,16 @@
                     }
                 }
             },
-            dataShow(data) {
-                window.sessionStorage.goodList = JSON.stringify(data);
-                console.log(111,data);
+            //当路由跳转时这个组件异步的去销毁，同时新的组件立马开始创建，所以在新的组件挂在完毕时，下面的方法还未执行，所以会出现数据获取不到的错误。
+            dataShow(list) {
+                window.sessionStorage.goodList = JSON.stringify(list);
+                this.$router.push({
+                    path: "/details",
+                    query: {
+                        title: list.title
+                    }
+                });
+                // console.log(window.sessionStorage.goodList);
             }
         },
         computed: {

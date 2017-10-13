@@ -10,9 +10,13 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import "../node_modules/vue-awesome-swiper/node_modules/swiper/dist/css/swiper.min.css"
 import vueResource from "vue-resource"
 import Vuex from "vuex"
+import vueLazyLoad from "vue-lazyload"
 Vue.use(vueResource)
 Vue.use(VueAwesomeSwiper)
 Vue.use(Vuex)
+Vue.use(vueLazyLoad, {
+    loading: "../static/loading-svg/loading-bars.svg"
+})
 
 Vue.config.productionTip = false
 

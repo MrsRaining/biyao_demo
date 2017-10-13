@@ -1,5 +1,8 @@
 <template>
     <div class="details-outer">
+        <div class="cover" v-show="isShow">
+
+        </div>
        <header-t></header-t>
        <div class="d-head">
            <div class="d-head-top">
@@ -91,22 +94,70 @@
                <img :src="showList.imageUrl" alt="">
            </div>
        </div>
-        <div class="footer">
-            <a href="javasript:void(0);" class="foot-left">
-                <p><img src="https://static.biyao.com/m/img/icon/live.png?v=biyao_8242561"></p>
-                <p>客服</p>
-            </a>
-            <a href="javasript:void(0);" class="foot-left">
-                <p><img src="https://static.biyao.com/m/img/base/icon_shopcarNew.png?v=biyao_254086b"></p>
-                <p>购物车</p>
-            </a>
-            <a href="javasript:void(0);" class="foot-right">
-                <p>加入购物车</p>
-            </a>
-            <a href="javasript:void(0);" class="foot-right">
-                <p>立即购买</p>
-            </a>
+       <div class="bottom">
+           <!-- <div class="bottom-c" v-show="isShow"></div> -->
+           <div class="bottom-top" v-show="isShow">
+               <div class="bottom-top-inn">
+                   <div class="bottom-inn-t">
+                       <span class="bottom-cancle" @click="closeFn">X</span>
+                       <div class="bottom-inn-t-l">
+                           <img :src="showList.imageUrl">
+                       </div>
+                       <div class="bottom-inn-t-r">
+                           <p class="p-fir">￥699</p>
+                           <p class="p-sec">生产周期：15天</p>
+                           <p class="p-th">已选择：墨绿色，S，1件</p>
+                       </div>
+                   </div>
+                   <div class="bottom-inn-m">
+                       <div class="bottom-inn-m-t">
+                           <p>颜色</p>
+                           <div class="bottom-inn-m-t-c">
+                               <a href="javascript:void(0);" v-for="(item, index) in color" :key="item.id" @click="colorFn(index)" :class="{'bottom-color': num1==index?true:false}">{{ item }}</a>
+                           </div>
+                       </div>
+                       <div class="bottom-inn-m-t">
+                           <p>尺寸</p>
+                           <div class="bottom-inn-m-t-c">
+                               <a href="javascript:void(0);" v-for="(item, index) in size" :key="item.id" @click="sizeFn(index)" :class="{'bottom-color': num2==index?true:false}">{{ item }}</a>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="bottom-inn-b">
+                       <div class="bottom-inn-b-t">
+                           <span>购买数量</span>
+                           <div>
+                               <a href="javascript:void(0);">－</a>
+                               <span>1</span>
+                               <a href="javascript:void(0);">＋</a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="footer">
+                <div class="foot-left" v-show="!isShow">
+                    <a href="javasript:void(0);">
+                        <p><img src="https://static.biyao.com/m/img/icon/live.png?v=biyao_8242561"></p>
+                        <p>客服</p>
+                    </a>
+                    <a href="javasript:void(0);">
+                        <p><img src="https://static.biyao.com/m/img/base/icon_shopcarNew.png?v=biyao_254086b"></p>
+                        <p>购物车</p>
+                    </a>
+                </div>
+                <div class="foot-right">
+                    <a href="javasript:void(0);" @click="shopFn">
+                        <p>加入购物车</p>
+                    </a>
+                    <a href="javasript:void(0);" @click="shopFn">
+                        <p>立即购买</p>
+                    </a>
+                </div>
+                
+            </div>
         </div>
+        
    </div>
    
 </template>
@@ -122,7 +173,12 @@
                     autoplay: 2000,
                     loop: true
                 },
-                showList: ""
+                showList: "",
+                isShow: false,
+                color: ["墨绿色", "黑色", "卡其色"],
+                size: ["S", "M", "L", "XL", "XXL", "XXXL"],
+                num1: 0,
+                num2: 0
 
             };
         },
@@ -132,7 +188,18 @@
             console.log(this.showList);    
         },
         methods: {
-
+            shopFn() {
+                this.isShow = true;
+            },
+            closeFn() {
+                this.isShow = false;
+            },
+            colorFn(index) {
+                this.num1 = index;
+            },
+            sizeFn(index) {
+                 this.num2 = index;
+            }
         }
     }
 </script>
@@ -303,26 +370,168 @@
         background-color: #fff;
         border-top: 1px solid #cccccc;
     }
-    .footer a{
-        
-    }
     .footer .foot-left img{
-        width: 0.25rem;
-        height: 0.25rem;
+        width: 0.22rem;
+        height: 0.19rem;
     }
     .footer p{
         text-align: center;
     }
     .footer .foot-left{
-        width: 16.4%;
-        border-right: 1px solid #f2f2f2;
+        width: 1.38rem;
+        float: left;
+        display: flex;
+        justify-content: space-around;
+    }
+    .footer .foot-left a{
+        /* width: 50%; */
+        padding-top: 0.06rem;
+        color: #808080;
+        flex-grow: 1;
+        border-right: 1px solid #ccc;
     }
     .footer .foot-right{
-        width: 33.2%;
+        float: left;
+        flex-grow: 1;
+    }
+    .footer .foot-right a{
+        float: left;
+        width: 50%;
+        color: #7f4395;
     }
     .footer .foot-right p{
         line-height: 0.49rem;
         font-size: 0.14rem;
+    }
+    .footer .foot-right a:last-of-type{
+        background-color: #7f4395;
+        color: #fff;
+    }
+    .bottom{
+        width: 100%;
+        background-color: #fff;
+        position: fixed;
+        bottom: 0;
+        z-index: 100;
+    }
+    .bottom .bottom-top{
+        width: 100%;
+    }
+    .bottom .bottom-c{
+        height: 0.12rem;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .bottom .bottom-top-inn{
+        padding: 0 0.12rem;
+    }
+    .bottom .bottom-inn-t{
+         height: 1.02rem;
+         border-bottom: 1px solid #dddddd;
+         position: relative;
+    }
+    .bottom .bottom-inn-t .bottom-cancle{
+        width: 0.2rem;
+        height: 0.2rem;
+        border-radius: 0.1rem;
+        border: 2px solid #393939;
+        display: block;
+        line-height: 0.2rem;
+        text-align: center;
+        position: absolute;
+        top: 0.17rem;
+        right: 0.04rem;
+    }
+    .bottom .bottom-inn-t-l{
+        float: left;
+        width: 1.01rem;
+        height: 1.01rem;
+        border: 1px solid #dddddd;
+        margin-top: -0.12rem;
+    }
+    .bottom .bottom-inn-t-l img{
+        width: 100%;
+        height: 100%;;
+    }
+    .bottom .bottom-inn-t-r{
+        float: left;
+        height: 0.9rem;
+        padding-top: 0.12rem;
+        padding-left: 0.07rem;
+    }
+    .bottom .bottom-inn-t-r p{
+        line-height: 0.2rem;
+    }
+    .bottom .bottom-inn-t-r .p-fir{
         color: #7f4395;
+        font-size: 0.15rem;
+    }
+    .bottom .bottom-inn-t-r .p-sec{
+        color: #808080;
+        font-size: 0.12rem;
+    }
+    .bottom .bottom-inn-t-r .p-th{
+        color: #000;
+        font-size: 0.12rem;
+    }
+    .bottom .bottom-inn-m{
+        height: 2.22rem;
+        border-bottom: 1px solid #dddddd;
+    }
+    .bottom .bottom-inn-m-t{
+        height: 0.88rem;
+    }
+    .bottom .bottom-inn-m-t p{
+        height: 0.37rem;
+        line-height: 0.37rem;
+    }
+    .bottom .bottom-inn-m-t>div a{
+        float: left;
+        height: 0.32rem;
+        line-height: 0.32rem;
+        padding: 0 0.2rem;
+        color: #808080;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+        margin-right: 0.2rem;
+        margin-bottom: 0.1rem;
+    }
+    .bottom .bottom-inn-b{
+        height: 0.74rem;
+    }
+    .bottom .bottom-inn-b-t{
+        height: 0.44rem;
+        line-height: 0.44rem;
+    }
+    .bottom .bottom-inn-b-t>div{
+        float: right;
+        height: 0.24rem;
+    }
+    .bottom .bottom-inn-b-t>div a{
+        display: inline-block;
+        height: 0.24rem;
+        width: 0.24rem;
+        line-height: 0.24rem;
+        text-align: center;
+        border-radius: 0.12rem;
+        border: 1px solid #b1b1b1;
+        font-size: 0.16rem;
+        color: #b1b1b1;
+    }
+    .bottom .bottom-inn-b-t>div span{
+        display: inline-block;
+        width: 0.3rem;
+        text-align: center;
+    }
+    .cover{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        z-index: 50;
+    }
+    .bottom .bottom-inn-m .bottom-color{
+        background-color: #7f4395;
+        color: #fff;
     }
 </style>

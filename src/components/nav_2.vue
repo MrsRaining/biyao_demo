@@ -22,7 +22,7 @@
         <div class="menWear">
             <div class="menCloth" v-for="list in items.item" :key="list.id">
                 <a href="javasript:void(0);" @click="dataShow(list)">        
-                    <img :src="list.imageUrl">
+                    <img v-lazy="list.imageUrl">
                     <span>{{ list.title }}</span>
                     <span>￥{{ list.price }}</span>
                 </a>

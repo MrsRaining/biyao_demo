@@ -7,6 +7,9 @@ import Mine from '../views/mine.vue'
 import nav_1 from '../components/nav_1.vue'
 import nav_2 from '../components/nav_2.vue'
 import Details from '../views/details.vue'
+import Login from '../components/login.vue'
+import Me from '../components/me.vue'
+import Register from '../components/register.vue'
 
 
 Vue.use(Router)
@@ -37,7 +40,12 @@ export default new Router({
     {
       path: '/mine',
       name: 'mine',
-      component: Mine
+      component: Mine,
+      children: [
+        {path: "login", component: Login},
+        {path: "me", component: Me},
+        {path: "register", component: Register}
+      ]
     },
     {
       path: '/',

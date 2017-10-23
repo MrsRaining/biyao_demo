@@ -6,6 +6,7 @@ import router from './router'
 import './assets/css/reset.css'
 import headerS from './components/headerS'
 import headerT from './components/headerT'
+import tipBox from './components/tipBox'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import "../node_modules/vue-awesome-swiper/node_modules/swiper/dist/css/swiper.min.css"
 import vueResource from "vue-resource"
@@ -23,6 +24,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 Vue.component('header-s', headerS);
 Vue.component('header-t', headerT);
+Vue.component('tip-box', tipBox);
 
 //利用vuex统一管理组件组件之间需要传递的参数。
 const store = new Vuex.Store({

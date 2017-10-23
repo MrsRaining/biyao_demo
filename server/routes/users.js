@@ -93,4 +93,147 @@ router.post("/login", function(req, res, next) {
         }
     });
 });
+router.post("/logout", function (req, res, next) {
+	res.cookie("userName", "");
+	res.json({
+		status: "0",
+		msg: "",
+		result: ""
+	});
+});
+router.get("/checkStatus", function (req, res, next) {
+    console.log(req.cookies);
+	if(req.cookies.userName) {
+		Users.findOne({}, function(err, doc) {
+            if(err) {
+                res.json({
+                    status: "1",
+                    msg: err.message
+                }); 
+            }else{
+                var jsonObj = {
+                    status: "1",
+                    msg: ""
+                }
+                console.log(doc.user.forEach);
+                doc.user.forEach(function (value) {
+                    console.log(req.cookies.userName);
+                    if(value.userName == req.cookies.userName) {
+                        // res.json({
+                        //     status: "0",
+                        //     msg: value.userName
+                        // });
+                        jsonObj = {
+                            status: "0",
+                            msg: value.userName
+                        }
+                        console.log(444);
+                        return;
+                    }
+
+                });
+
+            }
+            res.json(jsonObj);
+            console.log(333);
+        });
+	}else{
+		res.json({
+			status: "1",
+			msg: ""
+		});
+	}
+});
+
+router.post("/addCart", function (req, res, next) {
+    var jsonObj = {};
+    var params = req.body.goodList;
+    console.log(params);
+    if(req.cookies.userName) {  
+        Users.findOne({}, function(err, doc) {
+            if(err) {
+                //res.json是异步的，只有这个函数结束后才能终止程序。
+                res.json({
+                    status: "1",
+                    msg: ""
+                });
+            }else{
+                var flag = true;
+                doc.user.forEach(function(value) {
+                    if(value.userName == req.cookies.userName) {
+                        // value.cartList.forEach(function(item) {
+                        //     if(item.productId == params.productId) {
+                        //         flag = false;
+                        //         jsonObj = {
+                        //             status: "3",
+                        //             msg: ""
+                        //         };   
+                        //     }
+                        // }); 
+                        for(var i = 0, len = value.cartList.length; i < len; i++) {
+                            if(value.cartList[i].productId == params.productId) {
+                                flag = false;
+                                res.json({
+                                    status: "3",
+                                    msg: ""
+                                }); 
+                                break;  
+                            }
+                        }
+                        if(flag) {
+                            console.log(111111111111);
+                            value.cartList.push(params);
+                            doc.save(function(err1, doc1) {
+                                if(err1) {
+                                    res.json({
+                                        status: "1",
+                                        msg: ""
+                                    });
+                                }else{
+                                    res.json({
+                                        status: "0",
+                                        msg: ""
+                                    });
+                                }
+                            });
+                        }  
+                    }
+                });
+                
+            }
+        });
+    }else{
+        res.json({
+            status: "2",
+            msg: ""
+        });
+    }
+    
+});
+router.post("/cart", function (req, res, next) {
+	if(req.cookies.userName) {
+        Users.findOne({}, function(err, doc) {
+            if(err) {
+                res.json({
+                    status: "1",
+                    msg: ""
+                });
+            }else{
+                doc.user.forEach(function(value) {
+                    if(value.userName == req.cookies.userName) {
+                        res.json({
+                            status: "0",
+                            msg: value.cartList
+                        });
+                    }
+                });
+            }
+        });
+    }else{
+        res.json({
+            status: "1",
+            msg: ""
+        });
+    }
+});
 module.exports = router;

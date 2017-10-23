@@ -14,11 +14,28 @@
             };
         },
         created() {
-            console.log(123456);
-            this.$router.push({
-                path: "/mine/login",
-                query: {
-                    title: encodeURIComponent("登录")
+            // console.log(123456);
+            // this.$router.push({
+            //     path: "/mine/login",
+            //     query: {
+            //         title: encodeURIComponent("登录")
+            //     }
+            // });
+            this.$http.get("/users/checkStatus").then(function(res) {
+                if(res.data.status == "0") {
+                    this.$router.push({
+                        path: "/mine/me",
+                        query: {
+                            title: encodeURIComponent("个人中心")
+                        }
+                    });
+                }else{
+                    this.$router.push({
+                        path: "/mine/login",
+                        query: {
+                            title: encodeURIComponent("登录")
+                        }
+                    });  
                 }
             });
         },

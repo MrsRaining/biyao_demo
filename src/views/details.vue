@@ -113,13 +113,13 @@
                        <div class="bottom-inn-m-t">
                            <p>颜色</p>
                            <div class="bottom-inn-m-t-c">
-                               <a href="javascript:void(0);" v-for="(item, index) in color" :key="item.id" @click="colorFn(index)" :class="{'bottom-color': num1==index?true:false}">{{ item }}</a>
+                               <a href="javascript:void(0);" v-for="(item, index) in color" :key="item.id" @click="colorFn(index, item)" :class="{'bottom-color': num1==index?true:false}">{{ item }}</a>
                            </div>
                        </div>
                        <div class="bottom-inn-m-t">
                            <p>尺寸</p>
                            <div class="bottom-inn-m-t-c">
-                               <a href="javascript:void(0);" v-for="(item, index) in size" :key="item.id" @click="sizeFn(index)" :class="{'bottom-color': num2==index?true:false}">{{ item }}</a>
+                               <a href="javascript:void(0);" v-for="(item, index) in size" :key="item.id" @click="sizeFn(index, item)" :class="{'bottom-color': num2==index?true:false}">{{ item }}</a>
                            </div>
                        </div>
                    </div>
@@ -127,9 +127,9 @@
                        <div class="bottom-inn-b-t">
                            <span>购买数量</span>
                            <div>
-                               <a href="javascript:void(0);">－</a>
-                               <span>1</span>
-                               <a href="javascript:void(0);">＋</a>
+                               <a href="javascript:void(0);" @click="productNumFn('-')">－</a>
+                               <span>{{ productNum }}</span>
+                               <a href="javascript:void(0);" @click="productNumFn('+')">＋</a>
                            </div>
                        </div>
                    </div>
@@ -178,7 +178,10 @@
                 color: ["墨绿色", "黑色", "卡其色"],
                 size: ["S", "M", "L", "XL", "XXL", "XXXL"],
                 num1: 0,
-                num2: 0
+                num2: 0,
+                colorCheck: "",
+                sizeCheck: "",
+                productNum: 1
 
             };
         },
@@ -189,16 +192,49 @@
         },
         methods: {
             shopFn() {
+                if(this.isShow) {
+                    var goodList1 = {   
+                        productId: this.showList.productId,
+                        price: this.showList.price,
+                        title: this.showList.title,
+                        imageUrl: this.showList.imageUrl,
+                        productNum: this.productNum,
+                        color: this.colorCheck,
+                        size: this.sizeCheck
+                    };
+                    this.$http.post("/users/addCart", {
+                        goodList: goodList1
+                    }).then(function(res) {
+                        if(res.data.status == "0") {
+                            console.log("加入购物车成功");
+                        }else if(res.data.status == "2") {
+                            console.log("请登录");
+                        }else if(res.data.status == "3") {
+                            console.log("商品已存在");
+                        }else{
+                            console.log(res);
+                        }
+                    });
+                }
                 this.isShow = true;
             },
             closeFn() {
                 this.isShow = false;
             },
-            colorFn(index) {
+            colorFn(index, item) {
                 this.num1 = index;
+                this.colorCheck = item;
             },
-            sizeFn(index) {
+            sizeFn(index, item) {
                  this.num2 = index;
+                 this.sizeCheck = item;
+            },
+            productNumFn(prop) {
+                if((prop == "-") && (this.productNum >1)) {
+                    this.productNum--;
+                }else if(prop == "+") {
+                    this.productNum++;
+                }
             }
         }
     }

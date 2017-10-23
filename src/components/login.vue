@@ -2,10 +2,13 @@
     <div>
        <!-- 登录框与按钮 -->
         <div class="login_in">
+            <tip-box>
+                <span slot="tip-text">登录成功</span>
+            </tip-box>
             <div class="login">
                 <input type="text" placeholder="请输入账号" v-model="userName">
                 <input type="text" placeholder="请输入登录密码" v-model="password">
-                <a></a>
+                <div class="login-tip" v-show="tipShow">账号或者密码输入错误!</div>
                 <input type="button" value="登录" @click="loginFn">
                 <p>
                     <router-link :to="{path: '/mine/register', query: {title: encodeURIComponent('注册')}}">还没有注册账号？快速注册</router-link>
@@ -38,7 +41,8 @@
         data () {
             return {
                 userName: "",
-                password: ""
+                password: "",
+                tipShow: false
             };
         },
         methods: {
@@ -52,11 +56,12 @@
                         this.$router.push({
                             path: "/mine/me",
                             query: {
-                                title: encodeURIComponent("个人中心")
+                                title: encodeURIComponent("个人中心"),
+                                userName: this.userName
                             }
                         });
                     }else{  
-                        console.log("登录失败");
+                        this.tipShow = true
                     }
                 });
             }
@@ -103,6 +108,13 @@ body{
     margin-left: 5%;
     font-size: .16rem;
     height: .52rem;
+}
+.login .login-tip{
+    height: 20px;
+    font-size: 0.14rem;
+    text-indent: 0.25rem;
+    color: red;
+    position: absolute;
 }
 .login input[type="text"]{
     border-bottom: 2px solid #ccc;

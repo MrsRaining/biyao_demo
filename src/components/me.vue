@@ -5,7 +5,7 @@
             <div class="m_m1">
                 <div class="m1_img"><img src="https://static.biyao.com/m/img/base/defult_userimg.png"></div>
             </div>
-            <div class="m_mr">by_Sdg</div>
+            <div class="m_mr">{{ this.$route.query.userName }}</div>
             <div class="m_mz">
                 <span class="span1">待付款</span>
                 <span>退款/售后</span>
@@ -47,9 +47,9 @@
         <div class="footer_bd">
             <div class="footer_bd1">
                 <div class="f-bd1">
-                    <span>by....47..</span>
+                    <span>{{ this.$route.query.userName }}</span>
                     <span>|</span>
-                    <a href="">退出</a>
+                    <a href="javascript:void(0);" @click="logout">退出</a>
                 </div>
                 <div  class="f-bd2">
                     <a href="">关于必要</a>
@@ -74,6 +74,22 @@
             return {
                  
             };
+        },
+        methods: {
+            logout() {
+                this.$http.post("/users/logout").then(function (res) {
+                    if(res.data.status == "0") {
+                        this.$router.push({
+                            path: "/mine/login",
+                            query: {
+                                title: encodeURIComponent("登录")
+                            }
+                        });
+                    }else{
+                        console.log("登出失败");
+                    }
+                });
+            }
         }
     }
 </script>

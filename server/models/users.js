@@ -4,7 +4,18 @@ var userSchema = new mongoose.Schema({
         {
             "userName": String,
             "password": String,
-            "cartList": Array
+            "cartList": [
+            	{
+            		"productId": String,
+	                "price": String,
+	                "title": String,
+	                "imageUrl": String,
+	                "productNum": Number,
+	                "color": String,
+	                "size": String,
+	                "checked": Boolean
+            	}
+            ]
         }
     ]
 });

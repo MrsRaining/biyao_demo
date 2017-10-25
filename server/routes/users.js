@@ -236,4 +236,152 @@ router.post("/cart", function (req, res, next) {
         });
     }
 });
+router.post("/delCart", function(req, res, next) {
+    Users.findOne({}, function(err, doc) {
+        if(err) {
+            res.json({
+                status: "1",
+                msg: ""
+            });
+        }else{
+            doc.user.forEach(function(value) {
+                if(value.userName == req.cookies.userName) {
+                    value.cartList.forEach(function(item, index) {
+                        if(item.productId == req.body.productId) {
+                            value.cartList.splice(index, 1);
+                        }
+                    });
+                }
+            });
+            doc.save(function(err1, doc1) {
+                if(err1) {
+                    res.json({
+                        status: "1",
+                        msg: ""
+                    });
+                }else{
+                    res.json({
+                        status: "0",
+                        msg: ""
+                    });
+                }
+            });
+        }
+    });
+});
+
+router.post("/modCart", function (req, res, next) {
+    Users.findOne({}, function(err, doc) {
+        if(err) {
+            res.json({
+                status: "1",
+                msg: ""
+            });
+        }else{
+            doc.user.forEach(function(value) {
+                if(value.userName == req.cookies.userName) {
+                    // value.cartList.forEach(function(item, index) {
+                    //     if(item.productId == req.body.productId) {
+                    //         item.productNum ++;
+                    //     }
+                    // });
+                    for(var i = 0; i < value.cartList.length; i++) {
+                        if(value.cartList[i].productId == req.body.productId) {
+                            value.cartList[i].productNum = req.body.productNum;
+                        }
+                    }
+                }
+            });
+            console.log(doc.user[1].cartList[0].productNum);
+            doc.save(function(err1, doc1) {
+                if(err1) {
+                    res.json({
+                        status: "1",
+                        msg: ""
+                    });
+                }else{
+                    res.json({
+                        status: "0",
+                        msg: doc1
+                    });
+                }
+            });
+        }
+    });
+});
+
+router.post("/checked", function (req, res, next) {
+    Users.findOne({}, function(err, doc) {
+        if(err) {
+            res.json({
+                status: "1",
+                msg: ""
+            });
+        }else{
+            doc.user.forEach(function(value) {
+                if(value.userName == req.cookies.userName) {
+                    // value.cartList.forEach(function(item, index) {
+                    //     if(item.productId == req.body.productId) {
+                    //         item.productNum ++;
+                    //     }
+                    // });
+                    for(var i = 0; i < value.cartList.length; i++) {
+                        if(value.cartList[i].productId == req.body.productId) {
+                            value.cartList[i].checked = req.body.checked;
+                        }
+                    }
+                }
+            });
+            doc.save(function(err1, doc1) {
+                if(err1) {
+                    res.json({
+                        status: "1",
+                        msg: ""
+                    });
+                }else{
+                    res.json({
+                        status: "0",
+                        msg: doc1
+                    });
+                }
+            });
+        }
+    });
+});
+router.post("/checkedAll", function (req, res, next) {
+    Users.findOne({}, function(err, doc) {
+        if(err) {
+            res.json({
+                status: "1",
+                msg: ""
+            });
+        }else{
+            doc.user.forEach(function(value) {
+                if(value.userName == req.cookies.userName) {
+                    // value.cartList.forEach(function(item, index) {
+                    //     if(item.productId == req.body.productId) {
+                    //         item.productNum ++;
+                    //     }
+                    // });
+                    for(var i = 0; i < value.cartList.length; i++) {
+                            value.cartList[i].checked = req.body.checked;
+                    }
+                }
+            });
+            doc.save(function(err1, doc1) {
+                if(err1) {
+                    res.json({
+                        status: "1",
+                        msg: ""
+                    });
+                }else{
+                    res.json({
+                        status: "0",
+                        msg: doc1
+                    });
+                }
+            });
+        }
+    });
+});
 module.exports = router;

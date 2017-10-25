@@ -200,7 +200,8 @@
                         imageUrl: this.showList.imageUrl,
                         productNum: this.productNum,
                         color: this.colorCheck,
-                        size: this.sizeCheck
+                        size: this.sizeCheck,
+                        checked: true
                     };
                     this.$http.post("/users/addCart", {
                         goodList: goodList1

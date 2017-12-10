@@ -1,3 +1,4 @@
 var data = {
-    name: 'fanzilong'
+    name: 'fanzilong',
+    sex: "nan"
 }

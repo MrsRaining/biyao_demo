@@ -1,61 +1,77 @@
 <template>
-    <div>
+    <div class="outer">
         <header-t></header-t>
-        <div class="cart" v-for="item in dataList" :key="item.id">
+        <div class="cart">
             <!-- 购物车无商品时 -->
-            <!-- <div class="empty_shop">
+            <div class="empty_shop" v-show="!cartShow">
                 <img src="https://static.biyao.com/m/img/null/shopcar.png?v=biyao_6b91960">
                 <p>购物车还是空的，赶紧行动吧！</p>
                 <input type="button" value="去逛逛">
-            </div> -->
+            </div>
 
             <!-- 购物车有商品时 -->
-            <div class="normal_shop">
+            <div class="normal_shop" v-show="cartShow">
                 <div class="shop_list">
                     <!-- 购物车商品种类标题 -->
                     <div class="check_title">
                         <div>
                             <!-- 复选框 -->
-                            <span class="first_span"></span>
-                            <span class="last_span">FTCA袜品</span>
+                            <!-- <span class="first_span"></span> -->
+                            <span class="last_span">商品清单</span>
                         </div>
                     </div>
                     <!-- 单间 -->
-                    <div class="every_shop">
+                    <div class="every_shop" v-for="item in dataList" :key="item.id" v-show="item.imageUrl?true:false">
                         <div>
                             <!-- 复选框 -->
-                            <span class="first_span"></span>
+                            <span :class="{'first_span': true, 'first_span_active': item.checked}" @click="classFn(item)"></span>
                             <!-- 单件图片展示 -->
-                            <a href="#">
-                                <img src="https://bfs.biyao.com/group1/M00/18/CD/rBACVFmWVSiAHmXPAAEGg6macMA750_400x400.jpg">
+                            <a href="javascript:void(0);">
+                                <img :src="item.imageUrl">
                             </a>
                             <!-- 单件文本信息 -->
                             <div class="shop_info">
                                 <!-- 单件标题 -->
-                               <h4>多彩条纹康纶抗菌中筒女袜七双装</h4>
+                               <h4>{{ item.title }}</h4>
                                <!-- 单件单价 -->
-                               <span class="every_price">￥79</span></br>
+                               <span class="every_price">￥{{ item.price }}</span></br>
                                <!-- 单件简介 -->
-                               <h6>混色七双装</h6>
+                               <h6>{{ item.color }} {{ item.size }}</h6>
                                <!-- 单件按钮 -->
                                <div class="every_button">
-                                   <div class="jian">－</div>
-                                   <div class="num">1</div>
-                                   <div class="jian jia">＋</div>
+                                   <div class="jian" @click="modFn('-', item)">－</div>
+                                   <div class="num">{{ item.productNum }}</div>
+                                   <div class="jian jia" @click="modFn('+', item)">＋</div>
                                </div>
-                               <div class="delete">X</div>
+                               <div class="delete" @click="delFn(item.productId)">X</div>
                             </div>
                         </div>
                     </div>
                     <!-- 合计商品和价格 -->
                     <div class="sum_shop">
-                        共<span>1</span>件
+                        共<span>{{ sumNum }}</span>件
                         &nbsp;&nbsp;
-                        合计：<span>￥79</span>
+                        合计：<span>￥{{ sumPrice }}</span>
                         &nbsp;&nbsp;
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="footer">
+            <div class="inner">
+                <div class="foot-left">
+                    <span :class="{'spacial': true, 'spacial-active': checkData}" @click="checkAll"></span>
+                    <span>全选</span>
+                </div>
+                <div class="foot-mid">
+                    <span>合计:</span>
+                    <span class="mid-span">￥{{ sumPrice }}</span>
+                </div>
+                <div class="foot-right">
+                    结算({{ sumNum }})
+                </div>
+            </div>
+            
         </div>
    </div>
 </template>
@@ -65,32 +81,160 @@
         name: "cart",
         data () {
             return {
-                 dataList: ""
+                 dataList: "",
+                 productNum: "",
+                 cartShow: "",
+                 checkData: true
             };
         },
         created() {
-            this.$http.post("/users/cart").then(function(res) {
-                if(res.data.status == "0") {
-                    this.dataList = res.data.msg;
+            this.testFn();
+        },
+        methods: {
+            delFn(productId) {
+                this.$http.post("/users/delCart", {
+                    productId: productId
+                }).then(function(res) {
+                    console.log(res);
+                    this.testFn();
+                });
+                
+            },
+            modFn(sym, item) {
+                if(sym == "+") {
+                    item.productNum++;
+                }else if(sym == "-" && item.productNum > 0) {
+                    item.productNum--;
                 }
-            });
+                this.$http.post("/users/modCart", {
+                    productId: item.productId,
+                    productNum: item.productNum
+                }).then(function(res) {
+                    console.log(res);
+                });
+            },
+            classFn(item) {
+
+                item.checked = item.checked ? false : true;
+                console.log(item.checked);
+                this.$http.post("/users/checked", {
+                    productId: item.productId,
+                    checked: item.checked
+                }).then(function(res) {
+                    console.log(res);
+                });
+            },
+            checkAll() {
+                this.checkData = !this.checkData;
+                this.$http.post("/users/checkedAll", {
+                    checked: this.checkData
+                }).then(function(res) {
+                    this.testFn();
+                });
+            },
+            testFn() {
+                this.$http.post("/users/cart").then(function(res) {
+                    if(res.data.status == "0") {
+                        this.dataList = res.data.msg;
+                        console.log(this.dataList);
+                        if(this.dataList.length==1 && !this.dataList[0].imageUrl) {
+                            this.cartShow = false;
+                        }else{
+                            this.cartShow = true;
+                        }
+                    }
+                });
+            }
+        },
+        computed: {
+            sumPrice: function() {
+                var sum = 0;
+                  this.dataList.forEach((item) => {
+                    if(item.checked) {
+                      sum += item.productNum * item.price; 
+                    }
+                  });
+                  return sum;
+            },
+            sumNum: function() {
+                return this.dataList.length - 1;
+            }
         }
     }
 </script>
     
 <style lang="css" scoped>
-
+    .footer{
+        /*padding: 0 0.12rem;*/
+        width: 100%;
+        height: 0.54rem;
+        background-color: #fff;
+        position: absolute;
+        z-index: 100;
+        bottom: 0;
+        line-height: 0.54rem;
+    }
+    .footer .inner{
+        float: left;
+        padding: 0 0.12rem;
+    }
+    .footer .inner>div{
+        float: left;
+    }
+    .footer .foot-left span:last-of-type{
+        float: left;
+        text-indent: 0.08rem;
+    }
+    .spacial{
+        margin-top: 0.13rem;
+        display: block;
+        float: left;
+        width: 0.22rem;
+        height: 0.25rem;
+        background: url(https://static.biyao.com/m/img/icon/s1k.png?=biyaoafab808) no-repeat left center;
+        background-size: 80%;
+    }
+    .spacial-active{
+        margin-top: 0.13rem;
+        display: block;
+        float: left;
+        width: 0.22rem;
+        height: 0.25rem;
+        background: url(https://static.biyao.com/m/img/icon/s2.png?=biyao1d84f14) no-repeat left center;
+        background-size: 80%;
+    }
+    .footer .foot-mid{
+        margin-left: 1.3rem;
+    }
+    .footer .foot-mid .mid-span{
+        color: #7f4395;
+    }
+    .footer .foot-right{
+        border-radius: 0.05rem;
+        margin-left: 0.16rem;
+        width: 0.9rem;
+        height: 0.42rem;
+        line-height: 0.42rem;
+        margin-top: 0.06rem;
+        background-color: #7f4395;
+        color: #fff;
+        text-align: center;
+    }
     /* 购物车整体样式 */
+    .outer{
+        background-color: #f5f5f5;
+        height: 100%;
+        width: 100%;
+    }
     .cart{
         width: 100%;
         background-color: #f5f5f5;
-        min-height: 6.06rem;
-        padding-top: .01rem;
+        min-height: 6.95rem;
     }
 
     /* 购物车为空时的样式 */
     .empty_shop{
-        margin-top: .22rem;
+        padding-top: 0.2rem;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -132,7 +276,6 @@
     }
     /* 每一类商品样式 */
     .shop_list{
-        margin: .15rem 0;
         border-bottom: solid 1px #ccc;
         background-color: #fff;
         min-height: 1.97rem;
@@ -150,7 +293,16 @@
         width: 3.9rem;
         height: .25rem;
     }
+    
     .first_span{
+        width: .22rem;
+        height: .25rem;
+        background: url(https://static.biyao.com/m/img/icon/s1k.png?=biyaoafab808) no-repeat left center;
+        background-size: 80%;
+        display: inline-block;
+        float: left;
+    }
+    .first_span_active{
         width: .22rem;
         height: .25rem;
         background: url(https://static.biyao.com/m/img/icon/s2.png?v=biyao_1d84f14) no-repeat left center;

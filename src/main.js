@@ -21,6 +21,8 @@ Vue.use(vueLazyLoad, {
 
 Vue.config.productionTip = false
 
+var a = b = 4;
+
 /* eslint-disable no-new */
 Vue.component('header-s', headerS);
 Vue.component('header-t', headerT);
